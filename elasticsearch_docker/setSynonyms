@@ -1,0 +1,13 @@
+#!/bin/sh
+$docker_id=scoresim1
+$ES_server=localhost:9200
+$ES_index=scorelib
+
+docker cp analyzer/ngram_synonyms.txt $docker_id:/home/elasticsearch/elasticsearch/config/analysis/
+echo "stop elasticsearch"
+curl -XPOST -H "Content-Type: application/json" http://$ES_server/$ES_index/_close
+echo "\nimport synonyms"
+cd analyzer ; curl -XPUT -H "Content-Type: application/json" http://$ES_server/$ES_index/_settings -d @analyzer.json
+echo "\nstart elasticsearch"
+curl -XPOST -H "Content-Type: application/json" http://$ES_server/$ES_index/_open
+echo "\n"

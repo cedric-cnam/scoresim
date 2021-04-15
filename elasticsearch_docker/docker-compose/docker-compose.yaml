@@ -1,0 +1,60 @@
+version: '3.6'
+services:
+  scoresim_service:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.2
+    container_name: scoresim1
+    environment:
+      - node.name=scoresim01
+      - cluster.name=scoresim-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    ulimits:
+      nproc: 65535
+      memlock:
+        soft: -1
+        hard: -1
+    cap_add:
+      - ALL
+    privileged: true
+    networks:
+      - default
+    ports:
+      - "9200:9200"
+    
+
+  scoresim_service2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.2
+    container_name: scoresim2
+    environment:
+      - node.name=scoresim02
+      - cluster.name=scoresim-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+      - discovery.zen.ping.unicast.hosts=scoresim_service
+    ulimits:
+      nproc: 65535
+      memlock:
+        soft: -1
+        hard: -1
+    cap_add:
+      - ALL
+    privileged: true
+
+  scoresim_service3:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.2
+    container_name: scoresim3
+    environment:
+      - node.name=scoresim03
+      - cluster.name=scoresim-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+      - "discovery.zen.ping.unicast.hosts=scoresim_service"
+    ulimits:
+      nproc: 65535
+      memlock:
+        soft: -1
+        hard: -1
+    cap_add:
+      - ALL
+    privileged: true
+    

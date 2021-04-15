@@ -1,0 +1,63 @@
+###### plugin configuration 
+https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting-engine.html
+
+Config file "elasticsearch/plugin-descriptor.properties" must be set to the used elasticsearch version
+	currently 6.1.2
+Then, produce a new ZIP archive 'scoresim.zip' including the elasticsearch directory. 
+
+#|____elasticsearch/
+#| |____   scoresim.jar <-- classes, resources, dependencies
+#| |____   json-simple-1.1.jar
+#| |____   plugin-descriptor.properties
+
+###### plugin installation into elasticsearch #####
+
+bin/elasticsearch-plugin install file:///path/to/your/plugin
+
+###### SEARCH QUERIES ####
+
+POST /scorelib/_search
+{
+	"query": {
+	  "function_score": {
+	    "query": {"bool": {
+	    "must": [
+	      {"prefix": {"corpus_ref": "timbres"}},
+	      {"match_phrase": {"melody.value": "fmbb mbbc"}}
+	    ]
+	  }},
+	    "functions": [
+	      {"script_score": {"script": {
+			"lang": "ScoreSim",
+			"source": "scorelib",
+			"params": {
+				"query": "{\"items\": [{\"id\": \"\", \"tied\": false, \"octave\": 4, \"is_rest\": false, \"alteration\": 0, \"step\": \"G\", \"duration\": 1.0}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"C\", \"duration\": 0.5}, {\"id\": \"\", \"tied\": false, \"octave\": 4, \"is_rest\": false, \"alteration\": 0, \"step\": \"B\", \"duration\": 0.5}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"C\", \"duration\": 1.0}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"D\", \"duration\": 0.5}]}",
+				"type": 1}
+			}}}
+	    ]
+	  }
+	}
+}
+
+#Mapping to aggregate strings like "melody.value"
+PUT /scorelib/opus_index/_mapping
+{
+  "properties": {
+    "melody.value": {
+      "type": "text",
+      "fielddata": true
+    }
+  }
+}
+
+#Amount of scores per corpus
+POST scorelib/opus_index/_search
+{"aggs" : { "nb_par_corpus" : {
+"terms" : {"field" : "corpus_ref"} }}, "size":0}
+
+#Amount of occurrences of a given pattern
+POST scorelib/opus_index/_search
+{"aggs" : { "nb_par_corpus" : {
+"terms" : {"field" : "melody.value"} }}, "size":0}
+
+

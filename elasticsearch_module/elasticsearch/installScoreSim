@@ -1,0 +1,9 @@
+#!/bin/sh
+
+zip scoresim.zip json-simple-1.1.jar plugin-descriptor.properties scoresim.jar
+docker cp scoresim.zip 3a5558bcb3a8:/
+#docker exec -it 3a5558bcb3a8 "/home/elasticsearch/elasticsearch/installScoresim"
+#docker exec -it 3a5558bcb3a8 "/home/elasticsearch/elasticsearch/bin/elasticsearch"
+
+#/Volumes/Transcend/app/elasticsearch-6.2.2/bin/elasticsearch-plugin remove ScoreSim
+#/Volumes/Transcend/app/elasticsearch-6.2.2/bin/elasticsearch-plugin install -v file:///Volumes/Transcend/eclipse/ScoreSim/elasticsearch.zip
