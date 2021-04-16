@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ismir19-search.aux
+The style file: plain.bst
+Database file #1: ../biblio.bib
+You've used 35 entries,
+            2118 wiz_defined-function locations,
+            817 strings with 12236 characters,
+and the built_in function-call counts, 12967 in all, are:
+= -- 1276
+> -- 490
+< -- 19
++ -- 201
+- -- 160
+* -- 805
+:= -- 1958
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 182
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 570
+empty$ -- 1129
+format.name$ -- 160
+if$ -- 2901
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 34
+newline$ -- 178
+num.names$ -- 66
+pop$ -- 245
+preamble$ -- 1
+purify$ -- 152
+quote$ -- 0
+skip$ -- 457
+stack$ -- 0
+substring$ -- 881
+swap$ -- 200
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 0
+while$ -- 121
+width$ -- 37
+write$ -- 382

@@ -1,0 +1,218 @@
+\begin{thebibliography}{10}
+
+\bibitem{878178}
+Lasse {Bergroth}, Harri {Hakonen}, and Timo {Raita}.
+\newblock A survey of longest common subsequence algorithms.
+\newblock In {\em Proceedings Seventh International Symposium on String
+  Processing and Information Retrieval. SPIRE 2000}, pages 39--48, Sep. 2000.
+
+\bibitem{CCIMS05}
+Emilios Cambouropoulos, Maxime Crochemore, Costas~S. Iliopoulos, Manal Mohamed,
+  and Marie-France Sagot.
+\newblock {A Pattern Extraction Algorithm for Abstract Melodic Representations
+  that Allow Partial Overlapping of Intervallic Categories}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 167--174, 2005.
+
+\bibitem{CCF04}
+Domenico Cantone, Salvatore Cristofaro, and Simone Faro.
+\newblock {Efficient Algorithms for the delta-Approximate String Matching
+  Problem in Musical Sequences}.
+\newblock In {\em {Proc. of the Prague Stringology Conf. (Stringology)}}, pages
+  33--47, 2004.
+
+\bibitem{CCF05}
+Domenico Cantone, Salvatore Cristofaro, and Simone Faro.
+\newblock {Solving the $(\delta, \alpha)$-Approximate Matching Problem Under
+  Transposition Invariance in Musical Sequences}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 460--463, 2005.
+
+\bibitem{Casey2008}
+MA~Casey, Remco Veltkamp, Masataka Goto, Marc Leman, Christophe Rhodes, and
+  Malcolm Slaney.
+\newblock {Content-based music information retrieval: current directions and
+  future challenges}.
+\newblock {\em Proceedings of the IEEE}, 96(4):668--696, 2008.
+
+\bibitem{CJ06}
+Chuan-Wang Chang and Hewijin~Christine Jiau.
+\newblock {An Efficient Numeric Indexing Technique for Music Retrieval System}.
+\newblock In {\em {Proc. IEEE Intl Conf. on Multimedia and Expo (ICME)}}, pages
+  1981--1984, 2006.
+
+\bibitem{CI04}
+Rapha{\"e}l Clifford and Costas~S. Iliopoulos.
+\newblock {Approximate string matching for music analysis}.
+\newblock {\em Software Computing}, 8(9):597--603, 2004.
+
+\bibitem{ConstantinMFR11}
+Cam{\'{e}}lia Constantin, C{\'{e}}dric du~Mouza, Zo{\'{e}} Faget, and Philippe
+  Rigaux.
+\newblock The melodic signature index for fast content-based retrieval of
+  symbolic scores camelia constantin.
+\newblock In {\em Proceedings of the 12th International Society for Music
+  Information Retrieval Conference, {ISMIR} 2011, Miami, Florida, USA, October
+  24-28, 2011}, pages 363--368, 2011.
+
+\bibitem{DR04}
+Shyamala Doraisamy and Stefan~M. R{\"u}ger.
+\newblock {A Polyphonic Music Retrieval System Using N-Grams}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 204--209, 2004.
+
+\bibitem{Downie99}
+J.~Stephen Downie.
+\newblock {\em Evaluating a simple approach to music information retrieval:
+  Conceiving melodic n-grams as text}.
+\newblock PhD thesis, Univ. Western Ontario, 1999.
+
+\bibitem{doc-dsl-ES}
+ElasticSearch.
+\newblock Advanced scripts using script engines, 2018.
+\newblock
+  \url{https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting-engine.html}.
+
+\bibitem{ERP17}
+Jeff Ens, Bernhard~E. Riecke, and Philippe Pasquier.
+\newblock {The Significance of the Low Complexity Dimension in Music Similarity
+  Judgements}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 31--38, 2017.
+
+\bibitem{Klaus18}
+Klaus Frieler, Frank Höger, Martin Pfleiderer, and Simon Dixon.
+\newblock Two web applications for exploring melodic patterns in jazz solos.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 777--783, 07 2018.
+
+\bibitem{Good01}
+Michael Good.
+\newblock {\em The Virtual Score: Representation, Retrieval, Restoration},
+  chapter ''MusicXML for Notation and Analysis'', pages 113--124.
+\newblock W. B. Hewlett and E. Selfridge-Field, MIT Press, 2001.
+
+\bibitem{JDE07}
+Malo~Cameron Jones, J.~Stephen Downie, and Andreas~F. Ehmann.
+\newblock {Human Similarity Judgments: Implications for the Design of Formal
+  Evaluations}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 539--542, 2007.
+
+\bibitem{KR05}
+Eamonn~J. Keogh and Chotirat~(Ann) Ratanamahatana.
+\newblock {Exact Indexing of Dynamic Time Warping}.
+\newblock {\em Knowl. Inf. Syst.}, 7(3):358--386, 2005.
+
+\bibitem{Knopke08}
+Ian Knopke.
+\newblock {The Perlhumdrum and Perllilypond Toolkits for Symbolic Music
+  Information Retrieval}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 147--152, 2008.
+
+\bibitem{Kornstaedt98}
+Andreas Kornstaedt.
+\newblock Themefinder: A web-based melodic search tool.
+\newblock {\em Computing in Musicology}, 11:231--236, 1998.
+
+\bibitem{Lettl80}
+Günter Lettl and Peter~M. Gruber.
+\newblock {Isometries of the Space of Convex Bodies in Euclidean Space}.
+\newblock {\em Bulletin of the London Mathematical Society}, 12(6):455--462,
+  1980.
+
+\bibitem{Maier:1978:CPS:322063.322075}
+David Maier.
+\newblock The complexity of some problems on subsequences and supersequences.
+\newblock {\em Journal of ACM}, 25(2):322--336, April 1978.
+
+\bibitem{MRS08}
+Christopher~D. Manning, Prabhakar Raghavan, and Hinrich Schutze.
+\newblock {\em {Introduction to Information Retrieval}}.
+\newblock Cambridge University Press, 2008.
+\newblock Online version at \textit{http://informationretrieval.org/}.
+
+\bibitem{MEI_ws}
+{Music Encoding Initiative}.
+\newblock \url{http://www.music-encoding.org}, 2015.
+\newblock Accessed April 2019.
+
+\bibitem{MNX_overview}
+{Music Notation Community Group}.
+\newblock \url{https://www.w3.org/community/music-notation/}, 2018.
+\newblock Accessed April 2019.
+
+\bibitem{Navarro00}
+Gonzalo Navarro, Ricardo Baeza-yates, Erkki Sutinen, and Jorma Tarhio.
+\newblock {Indexing Methods for Approximate String Matching}.
+\newblock {\em {IEEE Data Engineering Bulletin}}, 24(4):19--27, 2001.
+
+\bibitem{NO04}
+Giovanna Neve and Nicola Orio.
+\newblock {Indexing and Retrieval of Music Documents through Pattern Analysis
+  and Data Fusion Techniques}.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 216--223, 2004.
+
+\bibitem{PLT01}
+Lutz Prechelt and Rainer Typke.
+\newblock An interface for melody input.
+\newblock {\em ACM Transactions on Computer-Human Interaction (TOCHI)},
+  8(2):133--149, 2001.
+
+\bibitem{Prince14}
+Jon~B. Prince.
+\newblock Contributions of pitch contour, tonality, rhythm, and meter to
+  melodic similarity.
+\newblock {\em Journal of experimental psychology}, 40(6):2319--2337, 2014.
+
+\bibitem{Rolland02}
+Perry Rolland.
+\newblock {The Music Encoding Initiative (MEI)}.
+\newblock In {\em Proceedings of the International Conference on Musical
+  Applications Using XML}, pages 55--59, 2002.
+
+\bibitem{Samet2006}
+Hanan Samet.
+\newblock {\em Foundations of Multidimensional and Metric Data Structures}.
+\newblock Morgan Kaufmann, 2006.
+
+\bibitem{Stuart_search-effectivenessmeasures}
+Craig Stuart, Yi-Wen Liu, and Eleanor Selfridge-Field.
+\newblock Search-effectiveness measures for symbolic music queries in very
+  large databases, 2004.
+
+\bibitem{Toussaint04}
+Godfried Toussaint.
+\newblock A comparison of rhythmic similarity measures.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, pages 242--245, 2004.
+
+\bibitem{Tra12}
+Nicolas Travers.
+\newblock {\em {Web Data Management}}, chapter {Putting into Practice:
+  Full-Text Indexing with LUCENE}, pages 355--363.
+\newblock Cambridge University Press, 2012.
+
+\bibitem{TGVWO03}
+Rainer Typke, Panos Giannopoulos, Remco~C. Veltkamp, Frans Wiering, and René
+  van Oostrum.
+\newblock Using transportation distances for measuring melodic similarity.
+\newblock In {\em Proceeding of International Conference on Music Information
+  Retrieval (ISMIR)}, 2003.
+
+\bibitem{Velardo2016}
+Valerio Velardo, Mauro Vallati, and Steven Jan.
+\newblock Symbolic melodic similarity: State of the art and future challenges.
+\newblock {\em Computer Music Journal}, 40:70--83, 2016.
+
+\bibitem{Lucene08}
+Cailan Zhou, Bin Feng, and Zhihao Li.
+\newblock Research and implementation of the small-scale search engine based on
+  lucene.
+\newblock In {\em Proceedings of the 2008 International Conference on Computer
+  Science and Software Engineering - Volume 02}, CSSE '08, pages 377--380. IEEE
+  Computer Society, 2008.
+
+\end{thebibliography}
