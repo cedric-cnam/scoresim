@@ -4,6 +4,10 @@ Tiange told me about a question regarding the most "useful" patterns that can be
 
 However, it made me think that it would be quite useful to produce, by corpus, a list of the *n* most frequent patterns of size *s*, with *s* ranging from, say 5 to 12 (?). This would give us a robust indicator on the selectivity of patterns, and could guide our performance study.
 
+- `NT` Seems an interesting way to validate our approach. It corresponds to an *exact* match, targeting both precision and recall.
+- `NT` But, it does not address the *similarity* issue. It should be good to refine those statistics with *similar* patterns. If we can identify a ground truth, we will study the efficiency of our approach, and also the precision with regards to *exact* and *similarity* matchs.
+- `NT` We assume that for each types of patterns, there is a string encoding (heights, duration, etc.)
+
 ## Frequent patterns problem
 
 Assuming that 
@@ -15,6 +19,9 @@ The generic statement of the problem (given an input size *s* and a result with 
   
   1. for each pattern *P* (substring of size *s*) found in at least one voice, we count the number of occurrences of *P* in the corpus
   2. we report the *n* patterns *P* with the maximal (resp. minimal)  number of occurrences.
+
+- `NT` According to occurencies, *n* corresponds to the total number of *matchs* in the corpus or the total number of *strings/voices that contains a match* in the corpus? (*i.e.,* tf vs idf). It should have an impact on the output if we considere the number of matchs within a voice/opus/opera/corpus/corpora. Those different dimensions can be also an other aspect of the validation (relevance when taking into account voices, opus, etc.)
+- `NT` It levels up the question of the weight of matching patterns within a single string/voice. What do we do if there are 3 exact match within a voice compared to another voice that contains only 2?
 
 ## Frequent patterns algorithms
 
