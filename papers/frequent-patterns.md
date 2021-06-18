@@ -33,3 +33,12 @@ I had a quick look at the state of the art. Needs to be continued.
    optimizations that would compute steps 1 and 2 together, and get rid of useless patterns as early as possible.
    
 To be investigated.
+
+- `NT` For **APriori** or **SAT**, those approaches are dedicated to frequent *itemsets*, so the sequence of your pattern is not a constraint. However, we can refer to **Frequent Sequence Mining** (FSM) algorithms. I found that pointers:
+  - [A Unified Framework for Frequent Sequence Mining with Subsequence Constraints - TODS'19](https://dl.acm.org/doi/10.1145/3321486) `a total framework for that, Table 1 p8 is interesting for the State of the Art.`
+  - [Mining Frequent Sequences Using Itemset-Based Extension - IMECS'08](www.iaeng.org/publication/IMECS2008/IMECS2008_pp591-596.pdf) `unknown conference but still`
+  - [Frequent Sequence Mining with Weight Constraints in Uncertain Databases - IMCOM'18](https://dl.acm.org/doi/10.1145/3164541.3164627) `could be interesting if we considering matching with similarity`
+  - [SPIRIT: Sequential pattern mining with regular expression constraints - VLDB'99](https://dl-acm-org.devinci.idm.oclc.org/doi/10.5555/645925.671514)
+  - [Closing the gap: Sequence mining at scale - TODS'15](https://dl-acm-org.devinci.idm.oclc.org/doi/10.1145/2757217)
+- `NT` *n-gram mining* can also be a target
+  - [Computing n-gram statistics in MapReduce - EDBT'13](https://dl-acm-org.devinci.idm.oclc.org/doi/10.1145/2452376.2452389)
