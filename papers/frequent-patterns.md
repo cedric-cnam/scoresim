@@ -7,6 +7,9 @@ However, it made me think that it would be quite useful to produce, by corpus, a
 - `NT` Seems an interesting way to validate our approach. It corresponds to an *exact* match, targeting both precision and recall.
 - `NT` But, it does not address the *similarity* issue. It should be good to refine those statistics with *similar* patterns. If we can identify a ground truth, we will study the efficiency of our approach, and also the precision with regards to *exact* and *similarity* matchs.
 - `NT` We assume that for each types of patterns, there is a string encoding (heights, duration, etc.)
+- `RFS` This last item is *very* interesting: in text, we have 1-dimensional letters, here symbols are 2-dimensional (pitch/"height", duration). The question of the key may also be relevant (see Foscarin et al. at ISMIR 21, hopefully).
+- `RFS` "from 5 to 12". 12 is probably too much (computationally expensive), 3 or 4 could be interesting. But a large approach may help in fixing those boundaries.
+- `RFS` We also discuss a bit this idea with Tiange (of a raw extraction of patterns based on length). I guess the "musicologists" part is related to the Polifonia WP3 project, dedicated to "pattern extraction". You're right, it may wait. The objective of such an extraction is crucial, though: do we look only for *melodic* patterns? Do we include more complex rhytmic information?
 
 ## Frequent patterns problem
 
@@ -21,7 +24,9 @@ The generic statement of the problem (given an input size *s* and a result with 
   2. we report the *n* patterns *P* with the maximal (resp. minimal)  number of occurrences.
 
 - `NT` According to occurencies, *n* corresponds to the total number of *matchs* in the corpus or the total number of *strings/voices that contains a match* in the corpus? (*i.e.,* tf vs idf). It should have an impact on the output if we considere the number of matchs within a voice/opus/opera/corpus/corpora. Those different dimensions can be also an other aspect of the validation (relevance when taking into account voices, opus, etc.)
+- `RFS` While it may be important to report / normalize the frequencies, I guess we may first work without normalization: a first pattern mining search will help us grasp the content in the scores and how we may retrieve it, the *absolute values* should not be used *as is*.
 - `NT` It levels up the question of the weight of matching patterns within a single string/voice. What do we do if there are 3 exact match within a voice compared to another voice that contains only 2?
+- `RFS` Again, not sure if this pattern mining should lead to "ranking" scores. I see the ranking as a second step.
 
 ## Frequent patterns algorithms
 
