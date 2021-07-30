@@ -1,0 +1,25 @@
+\pgfplotsset{width=.98\linewidth, height=5cm}
+\begin{figure}[h]
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+	xlabel={Corpus size},
+	ylabel={Time per score (ms)},
+	xmin=0, xmax=5000,
+	ymin=0.09, ymax=10,
+	legend pos=north east,
+	ymajorgrids=true,
+	grid style=dashed,
+	ymode=log,
+	%xmode=log,
+	]
+	
+	\input{figs/executionPerScore-plot1}
+	\input{figs/executionPerScore-plot2}
+	\input{figs/executionPerScore-plot3}
+	\input{figs/executionPerScore-plot4}
+	
+	\legend{q1, , q2, , q3, , q4, }
+	\end{axis}
+	\end{tikzpicture}
+	\caption{\label{fig:timeVSsize} Execution time per score with respect to corpus size  with and without query expansion}
+\end{figure}

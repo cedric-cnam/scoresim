@@ -1,0 +1,1012 @@
+ 	%
+%-----------------------------------------------------------
+%% Computer Music Journal LaTeX template
+%%
+%% September  2009
+%% Author: Cornelia Kreutzer, University of Limerick
+
+
+
+%---Document preamble
+%
+%\documentclass[letterpaper, 12pt]{article}
+
+% Temporaire
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{fullpage}
+
+\usepackage{cmjStyle-pdftex} %use CMJ style
+\usepackage{natbib} %natbib package, necessary for customized cmj BibTeX style
+\bibpunct{(}{)}{;}{a}{}{,} %adapt style of references in text
+
+% A decommenter
+%\doublespacing
+
+% A decommenter
+%\raggedright % use this to remove spacing and hyphenation oddities
+
+%\setlength{\parindent}{0} % first para indent?
+
+%A decommenter
+%\setlength{\parskip}{2ex}
+%\parindent 24pt
+
+\urlstyle{same} % make url tags have the same font
+
+% A decommenter
+%\setcounter{secnumdepth}{-1} % remove section numbering
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{multirow}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{minted}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{statistics}
+\usepackage{tikz}
+
+
+\newtheorem{Definition}{Definition}
+\newtheorem{Example}{Example}
+
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Proposition}[Theorem]{Proposition}
+\newtheorem{Remark}{Remark}
+
+\graphicspath{{../score-examples/}}
+
+\def\neuma/{\textsc{Anonymized}}
+\def\munir/{\textsc{MuNIR}}
+\def\alphabet/{\ensuremath{{\cal E}}}
+\def\exact/{\textsc{Ex}}
+\def\ryth/{\textsc{Ry}}
+\def\transp/{\textsc{Tr}}
+\def\exhaus/{\textsc{Sc}}
+\def\elasticsearch/{\textsc{ElasticSearch}}
+
+\newcommand{\vect}[1]{\ensuremath{\textbf{\rm{#1}}}}
+
+ \def\durations/{\ensuremath{{\cal D}}}
+\newcommand{\fig}[2]
+{
+\begin{figure}[ht]
+ \centerline{
+ \includegraphics[width=\columnwidth]{#1}}
+ \caption{\label{#1} #2}
+\end{figure}
+} 
+
+\newcommand{\figWithSize}[3]
+{
+\begin{figure}[ht]
+ \centerline{
+ \includegraphics[width=#3]{#1}}
+ \caption{\label{#1} #2}
+\end{figure}
+}
+
+\newenvironment{longue}{}{}%
+\newenvironment{courte}{\textbf{}}{}
+
+\newenvironment{smallverbatim}%
+{\endgraf\small\verbatimtab}{\endverbatimtab}
+
+
+\newcommand{\promille}{%
+  \relax\ifmmode\promillezeichen
+        \else\leavevmode\(\mathsurround=0pt\promillezeichen\)\fi}
+\newcommand{\promillezeichen}{%
+  \kern-.05em%
+  \raise.5ex\hbox{\the\scriptfont0 0}%
+  \kern-.15em/\kern-.15em%
+  \lower.25ex\hbox{\the\scriptfont0 00}}
+  
+  
+
+\definecolor{mygray}{gray}{0.90}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{maroon}{rgb}{0.5,0,0}
+\newcommand{\remPR}[1]{%
+\vspace*{0.1cm}
+\hrule
+\medskip
+\noindent
+\textbf{\textcolor{maroon}{Philippe}}: \textit{#1}
+\medskip
+\hrule
+\vspace*{0.1cm}
+}
+
+
+\newcommand{\remNT}[1]{%
+\vspace*{0.1cm}
+\hrule
+\medskip
+\noindent
+\textbf{\textcolor{mygreen}{Nicolas}}: \textit{#1}
+\medskip
+\hrule
+\vspace*{0.1cm}
+}
+
+
+%---Document----------
+\begin{document}
+
+% Title.
+% ------
+\title{Scalable Searching and Ranking\\  for Melodic Pattern Queries}
+
+{\cmjTitle Scalable Searching and Ranking for Melodic Pattern Queries}
+\vspace*{24pt}
+
+(In the initial submission, omit all the following author information to ensure anonymity during peer review.)
+
+%author - name
+{\cmjAuthor Firstname Lastname}
+%author - address
+\newline
+\begin{cmjAuthorAddress}
+    Sound Computing Group\\
+    University of Anywhere\\
+    1234 Anywhere Street\\
+    Anywhere, Anwhere 012345 USA\\
+    email@email.com
+\end{cmjAuthorAddress}
+
+\vspace*{24pt}
+{\cmjAuthorPhone << AUTHOR TELEPHONE (not for publication): +44 999 999 9999 >>}
+\vspace*{24pt}
+
+
+%
+\maketitle
+
+%
+\begin{abstract}
+We present the design and implementation of a scalable search engine for large Digital Score 
+Libraries. It covers the core features expected from an information retrieval system. 
+Music representation is pre-processed, simplified and normalized.
+Collections are searched for scores that match
+a melodic pattern, results are ranked on their similarity with the pattern, and matching fragments 
+are finally identified on the fly. 
+
+Moreover, all these features are designed to be integrated in a standard
+search engine and thus benefit from the horizontal scalability
+of such systems. Our method is fully implemented, and relies
+on \elasticsearch/ for collection indexing. We describe its main components,
+report and study its performances. All the components are released in open source on Github
+for the community of people and institutions managing large collections of digitized scores.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+We consider the problem of searching large collections of digital scores
+encoded in a symbolic format, 
+typically MusicXML~[\cite{Good01}], sometimes MEI~[\cite{Rolland02,MEI_ws}],
+or the forthcoming format proposed by the W3C Music Notation Group~[\cite{MNX}]. These encodings are now mature
+and stable, and we can expect to witness in the near future the emergence
+of very large Digital Score Libraries (DSL). A representative example of such endeavors is
+the OpenScore initiative (\url{http://openscore.cc}), which aims at publishing high-quality encoding of
+public domain sheet music. This potentially represents millions of scores, and
+gives rise to strong needs in terms of collection management tools tailored to the
+peculiarities of music representation.
+
+In the present paper, we focus on the \emph{content-based retrieval} problem. 
+We consider the common search mechanism where a user submits
+a monophonic \emph{query pattern} in order to retrieve, from a very large
+collection of scores, those that contain one or several fragments ``similar'' to this pattern. 
+We further require the search system to be \emph{scalable}, i.e., it
+should be able to cope with very large DSL containing millions of scores
+with instant response time.  Our assumptions on scores, fragments, and patterns, as well as scalability 
+requirements, are developped in the first section of the paper.
+
+With this objective in mind, we propose two main contributions.
+First, we expose the design of the core modules of a search engine, namely 
+pre-processing and data normalization, pattern-based search, ranking, 
+and on-line identification of fragments that match the  pattern query.  
+Second, we propose a list of guidelines for integrating these modules in a standard information retrieval
+system, with two main benefits: reduction of implementation efforts, and horizontal scalability.
+
+\fig{../figures/matching-steps}{Overview of the main indexing and matching steps}
+
+Our approach is summarized by Figure~\ref{../figures/matching-steps}. Pre-processing, matching,
+occurrence extraction and ranking are standard steps in text-based information retrieval system, adapted 
+here to
+the specificities of music representation. Tokenization, stemming and lemmatization~[\cite{MRS08}] 
+are, in our case, replaced by a so-called \emph{normalization}
+that simplifies the representation of music objects and improves the robustness of the result. 
+The \emph{matching step} then simply operates on the normalized representation
+of both the query pattern and the scores content. Normalization
+and matching are detailed in Section~\ref{sec:search}.
+
+Obtaining a full score in the result of a pattern-based query would be of little
+use if we were not able to identify all the fragments that actually match the pattern,
+called \emph{pattern occurrences}. This is necessary,  for instance,
+to highlight them in the user interface. Occurrences identification operates on the full score
+representation. 
+The  algorithm is
+described in  Section~\ref{sec:highlight}.
+
+Finally, the set of matching scores  are sorted according to 
+the similarity of their occurrences to the pattern. While pattern matching mostly relies 
+on the melodic profile, the ranking
+method focuses on the rhythm. Their combination produces results  where highly relevant scores regarding
+both criteria are top-ranked. The ranking method is presented in Section~\ref{sec:rank}.
+
+The rest of the paper (Section~\ref{sec:implem}) covers our second contribution, namely the integration
+of our music retrieval components  in a standard search engine. For the sake of concreteness, we
+detail this integration with \elasticsearch/ (\url{https://elastic.co}), however the method is actually applicable to any system relying
+on standard inverted index structures. 
+%We also give a brief description of our DSL, \neuma/, featuring
+%a search interface that benefits from these search functions.
+
+We finally  position our work with respect to the state of the art
+and lists some useful extensions that could enrich the search functionalities (Section~\ref{sec:rw}).
+
+\smallskip
+
+The paper is deliberately  practice-oriented. Anyone wishing to equip a score library with a search 
+mechanism should be able to do so quite easily by following our methodology. To this end,
+we also created  a GitHub repository  where our components are freely available.
+
+%%%%%%%%%%%%%%5
+\section{Preliminaries: scores, fragments, and patterns}\label{sec:prelim} 
+
+Given a \emph{melodic pattern} $P$ as input, the \emph{pattern matching operation}
+retrieves all the \emph{scores} such that at least one \emph{fragmen}t matches $P$. The concepts
+of scores, fragments, patterns and matching are defined in turn, and illustrated by the example 
+of Figure~\ref{incipit-44} that shows the initial measures of a typical music score.   
+
+\fig{incipit-44}{Excerpt of a polyphonic score}
+
+%Although it would be
+%possible, in principle, to build a search system addressing all the components of this layout
+%(beams, slurs, annotations, directions)
+Our approach focuses on the pitch and duration features,
+generally considered as the most important parameters for melodic similarity~[\cite{Prince14}].  We model 
+a score as a synchronization of \emph{voices}, and each voice as a sequence of  elements $<e_1, e_2, \cdots, e_n>$
+with $e_i$ in $\alphabet/ \times \durations/$, where \alphabet/ is the domain of musical ``events'' 
+(notes, chords, rest) and \durations/ the musical duration.
+
+\begin{Example}
+The musical score of Figure~\ref{incipit-44} consists of four voices
+(labeled as 'Violin I', 'Violin II', 'Chant' and 'Basse'), and  each voice
+is a sequence of musical events.
+
+Voice  $V_I$ ('Violin I')  encodes a melody beginning
+with a G4 (semi-quarter), followed by a D5 (idem), a D5 (dotted half), etc.
+Using some pitches encoding mechanism, for instance the  chromatic notation (number
+of semi-tones from the lowest possible sound), one obtains the representation
+of this voice as a sequence of pairs:
+$$
+V_I = <(34,8);(41,8);(41,3);(34,8);(42,8);(42,6);(39,8);\cdots>
+$$
+\end{Example}
+
+Figure~\ref{voice} shows the content of voice ``Violin I''
+(note how many notation elements have been removed). The blue fragment,
+denoted by $F$ in the following,  is used to illustrate the matching operation in the following.
+
+\figWithSize{voice}{Voice $V_I$ (Violin I of Figure~\ref{incipit-44})}{11cm}
+
+Given a voice $V$, we can derive other
+representations thanks to \emph{transformation} functions. We consider two main categories
+of transformations: \emph{simplifications} and \emph{mutations}. They will be used as part of the normalization 
+process.
+
+\begin{Definition}[Simplifications] 
+A voice $V$ can be transformed by the following  simplification functions: 
+$\epsilon(V)$, the sequence of pitches, $\pi(V)$ 
+the sequence of pitch intervals between events in $\epsilon(V)$, and 
+$\rho(V)$ the sequence of duration (without events) of $V$. 
+\end{Definition}
+
+Intuitively, $\epsilon(V)$
+captures the melodic profile (sequence of note heights), $\pi(V)$  the
+relative evolution of pitches' heights, and $\rho(V)$ the rhythmic profile of a voice.
+
+
+\begin{Example}\label{ex-descr}
+Applying the simplification functions to $V_I$ yields the following results:
+\begin{enumerate}
+   \item $\epsilon(V_I) = <34, 41, 41, 34, 42, 42, 39, 36,\ldots>$
+   \item $\pi(V_I) = <7, 0, -7, 8, 0, -3, -3,\ldots>$
+   \item $\rho(V_I)=<8, 8, 3, 8, 8, 6, 8, 6,\ldots>$
+\end{enumerate}
+
+\end{Example}
+
+A voice can also be transformed by applying  mutations to the sequence of intervals of its
+events.
+
+\begin{Definition}[Mutations]
+A mutation $M_{I_{1}\rightarrow  I_{2}}$ maps an interval $I_{1}$ to another interval
+$I_{2}$.  A \emph{mutation family} is a set of mutation functions. 
+\end{Definition}
+
+We will denote 
+for instance as ${\cal M}_D = \{M_{1\rightarrow 2}, M_{3\rightarrow 4}, M_{8\rightarrow 9}\}$ a subset of the family of \emph{diatonic mutation}
+that transforms a minor second, third or sixth in, respectively, their major counterpart, and conversely.
+If we mute the 4th and 6th intervals in $V_I$ with  ${\cal M}_D$ one
+obtains Fig.~\ref{mutated_voice}.
+
+\remNT{4° et 6°? pas plutot 1, 4 et 8?}
+
+\figWithSize{mutated_voice}{Voice $V_I$ transformed with diatonic mutations}{11cm}
+
+Finally, a \emph{fragment} is any subsequence of a voice. We will use the word ``pattern'' to denote the 
+fragment supplied by some user as a search
+criteria. Technically, there is no distinction between voices and fragments, apart from the context 
+where they are used.
+
+%%%%%%%%%%%%%%5
+\section{Normalization and Matching}\label{sec:search} 
+
+
+The matching operation is a Boolean procedure that tells whether the pattern $P$ and a fragment $F$ 
+are similar to one another. The definition of this similarity concept is subject to a trade-off
+between the precision (measuring the part of the result that is indeed relevant to the search)
+and the recall (measuring how many of the relevant scores are part of the result). This is a traditional
+information retrieval issue.  Let us examine how it is translated in the realm of symbolic 
+music representation.
+
+\subsection{Discussion}
+
+Fig.~\ref{patterns} shows several pattern variants, all candidates to match with 
+the fragment $F$ of $V_I$ illustrated on Fig.~\ref{voice} (blue note heads).
+
+\begin{figure}[th]
+\begin{center}
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{../score-examples/pexact}
+\centerline{$P_1$ (Exact match)}
+\end{minipage}  \hspace*{0.5cm}
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{../score-examples/ptransposed}
+\centerline{Pattern $P_2$ (Transposed match)}
+\end{minipage} \\
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{../score-examples//psmallrhythmvariant}
+\centerline{Pattern $P_3$ (Rhythmic variant)}
+\end{minipage}  \hspace*{0.5cm}
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{../score-examples//pexact3}
+\centerline{Pattern $P_4$ (Melodic variant)}
+\end{minipage} 
+\end{center}
+\caption{\label{patterns} Several matching interpretations }
+\end{figure}
+
+\paragraph{Exact Match}
+The strictest matching definition requires  both 
+the sequence of pitches 
+(resp. $\epsilon(F)$ and $\epsilon(P)$) and the sequence of durations (resp. $\rho(F)$ and $\rho(P)$)
+to be identical.  
+If we stick to this definition, $F$ matches only with pattern $P_1$. The precision is 
+then maximal (all matched fragments are relevant)  but we will miss 
+results that seem intuitive. $F$ will not match for instance 
+with the transposed pattern $P_2$, all other things being equal. This is probably too strict 
+for most applications.
+
+\paragraph{Transposed Match}
+Accepting transposition means that we ignore the absolute pitch and focus only on
+intervals, i.e., we compare  $\pi()$ and $\rho()$. This introduces some flexibility 
+in the melodic correspondence. In that case $P_2$ matches $F$. 
+
+\paragraph{Rhythmic Match}
+Next, consider pattern $P_3$ (Fig.~\ref{patterns}),  a  rhythmic variant of $P_2$. 
+Although quite close to $P_2$, it does not match $F$ 
+if we require exact rhythmic matching.
+Again, this definition seems too strict, since short rests,
+or slight duration adjustments,
+can typically be added or removed from a voice to denote a specific articulation,
+without severely affecting the music itself.
+% Second, we noticed that users that enter a pattern
+%tend to  be quite precise regarding the melodic profile,  and rather loose with
+%the rhythmic profile. For these reasons, we believe that $P_3$ should be considered as a match of $F$.
+$P_3$  matches $F$ if we compare only $\pi(P_3)$ and $\pi(F)$, and ignore $\rho()$.
+Note that rhythmic changes involve not only rests and durations, but also repeated notes. 
+
+\paragraph{Melodic Match}
+Finally, $P_4$ is a pattern where intervals have been mutated. The initial minor sixth
+is replaced by a major sixth. Since such mutations can be found in imitative styles
+(e.g., counterpoint), and it can make sense to accept them as part of the matching 
+definition.
+
+How far are we ready to go in the transformation process? Fig.~\ref{matchex}
+shows two extreme examples. Pattern $P_5$ matches $F$ with respect to the sequence of intervals
+($\pi(P_5) = \pi(F)$), whereas pattern $P_6$ is a rhythmic match ($\rho(P_5) = \rho(F)$). It seems clear
+that these patterns are quite far from the considered fragments and that, at the very least,
+they shoud not be given the same importance in the result set than the ones previous ones.
+
+\begin{figure}[th]
+\begin{center}
+\begin{minipage}[b]{7.5cm}
+\includegraphics[width=7.5cm]{faraway}
+\centerline{$P_5$ (Melodic matching)}
+\end{minipage} \hspace*{0.5cm}
+\begin{minipage}[b]{7.5cm}
+\includegraphics[width=7.5cm]{pmutated}
+\centerline{$P_6$ (Rhythmic matching)}
+\end{minipage}
+\end{center}
+\caption{\label{matchex} Two examples that match $F$ on one dimension }
+\end{figure}
+
+Music similarity has been studied for decades now. It seems obvious that
+there is no ideal solution that would suit all situations since similarity 
+judgements depend on many aspects.~\cite{JDE07,ERP17} However, our goal here
+is \emph{not} to compute  the full, complete and precise list of matching scores, 
+but to provide a filtering mechanism that gets rid of most of the scores that 
+do not match the query pattern. This mechanism should be simple, efficient,
+and plugable in a standard search engine. This  avoids applying  a costly similarity function to
+the whole collection.
+
+In this perspective, matching-based retrieval is a first step operated
+for performance reasons. Scores in the result set delivered by this first step might be subject 
+to further investigations if needed, for instance by applying a specialized 
+similarity function. This led us to adopt the following design guidelines:
+
+\begin{enumerate}
+  \item The result set should be ordered in such a way that the most relevant scores are top-ranked.
+  \item The filtering must be  effective enough to avoid scanning a large part of the collection 
+        for each query.
+  \item The trade-off between  recall and precision is tuned by a normalization applied 
+  during a pre-processing step. 
+\end{enumerate}
+
+\subsection{Normalization}
+
+It is generally considered that rhythm plays a prominent role in the perception of similarity. We therefore
+rank the result according to the rhythmic likeness of each retrieved fragment with the pattern (first criterion). 
+Filtering is based on the melodic profile, and its impact depends on how we simplify this profile
+in the normalization step. Two extremes choices are either to keep the exact sequence of pitches, 
+increasing the precision,  or to extract the melodic contour,  increasing the recall.
+
+In information retrieval systems, normalization is part of a sequence of pre-processing steps,
+usually called \emph{analyzers} and can be tuned by the administrator. This flexibility should be adopted 
+for the symbolic music retrieval as well. 
+
+Our current implementation relies on
+the \textsc{VNorm}() algorithm (Algorithm~\ref{alg:norm}), applied to both the pattern and each voice in
+the collection of scores. We defer a more general discussion on the normalization step to the concluding remarks.
+
+\begin{algorithm}
+ \caption{Voice  normalization\label{alg:norm}}
+ \begin{algorithmic}[1]
+\Procedure{VNorm}{$V$}\\
+\textbf{Input:} A voice $V$\\
+\textbf{Output:} A voice $V'$, normalization of $V$\\
+\State $V' \gets V$
+\State Normalize all note durations in $V'$ to a quarter.
+\State Merge repeated notes from $V'$.
+\State Remove rests from $V'$
+\State \textbf{return} $V'$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{figure}[ht]
+\begin{center}
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{pnorythmtrans}
+\centerline{Normalization for $F$ and $P_1$}
+\end{minipage}\\
+\begin{minipage}[b]{7cm}
+\includegraphics[width=7cm]{ptokenized}
+\centerline{Normalization for $P_2, P_3, P_5$}
+\end{minipage} \\
+\end{center}
+\caption{\label{normalized} Voice normalization.}
+\end{figure}
+
+Fig.~\ref{normalized} shows the voice normalization operated for patterns
+$F, P_1$ (top) and $P_2, P_3, P_5$ (bottom). In both cases the sequence of intervals
+obtained by $\pi()$ on the normalization is $<6, -3; -3; 1; 2; -2>$. 
+
+\subsection{Matching}
+
+The matching operation is defined as follows.
+
+\begin{Definition}
+A score $S$ \emph{matches} a pattern $P$ iff, for \emph{at least} a voice $v$
+in $S$, and \emph{at
+least} a pair $[b,e], e > b$ of offsets (positions) in $v$,
+ $$\pi(\textsc{VNorm}(P)) =  \pi (\textsc{VNorm}(v[b]\cdots v[e]))$$
+
+The set of voice fragments  $v[b]\cdots v[e]$ that match $P$ are called
+the \emph{matching occurrences} of $S$.
+\end{Definition}
+
+
+%%%%%%%%%%%%%%5
+\section{Finding matching occurrences}\label{sec:highlight} 
+
+Once matching scores have been extracted from the repository, it is necessary to identify the corresponding sequences of pitchs that match the given query pattern (on normalized ngrams).
+For this, we need to look forward to exact match between intervals in the query pattern, and pitchs in score's voices.
+Algorithm~\ref{alg:occurrences} produces a list of matching pitches which will be ranked in the next section.
+
+\begin{algorithm}
+	\caption{Finding matching occurrences\label{alg:occurrences}}
+\begin{algorithmic}[1]
+\Procedure{FindingOccurrences}{$V$, $Q$}\\
+\textbf{Input:} A voice $V$, a query $Q$ of intervals\\
+\textbf{Output:} A set $L$ of fragments\\
+\textbf{Variables:} $F$ a list of pitches\\
+	\hspace*{1.9cm}$q \leftarrow$ first($Q$)
+\For{$p$ in $V$} \Comment{Loop on the pitchs}
+%\If{\texttt{interval}(p, preceding(p)) != 0}
+\If{$q$ == last($Q$)}\Comment{$F$ fully matches $Q$}
+\State 			$L \leftarrow L \cup F$
+\State 			$F \leftarrow \emptyset$
+\State			$q \leftarrow$ first($Q$)
+\Else\Comment{A new interval}
+\State 			$q \leftarrow$ following($q$)
+\If{\texttt{interval}(q, preceding(q)) != \texttt{interval}(p, preceding(p))}
+\State 				$F \leftarrow \emptyset$\Comment{Mismatching interval}
+\State			$q \leftarrow$ first($P$)
+\EndIf
+%\EndIf
+\EndIf
+\State $F \leftarrow F \cup p$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\remNT{Attention aux motifs contenant sous-motif au début - regex / LCCS}
+
+This procedure processes a voice $V$ with a given query pattern $Q$.
+For each pitch $p$ from $V$, it verifies first if the interval between $p$ and its previous pitch (line~7) is not null, it means that we have to check the following query block. The \texttt{interval} function returns 0 when a pitch $p$ has no preceding pitch (first pitch of $V$).
+
+If $q$ is the last pitch of $Q$ (line~8), $F$ is then a matching occurrence that has to be added in output (line~9-11). Otherwise, we check if the interval corresponds to the queries' one (line~14), if not, a new matching block is initialized (line~15-16).
+In any case, current pitch $p$ is added to the matching pitches (line~17); as a new occurrence (preceding reset), as a pitch in the same block (same height), or as a following pitch (matching interval).
+
+%%%%%%%%%%%%%%%%%
+\section{Ranking}\label{sec:rank}
+
+Given a set of fragments that match a pattern $P$, we now want to sort them
+according to a similarity measure, and  put on top of the result list the ones that are closest to $P$.
+For the sake of illustration, we will now assume that the search pattern is our previous 
+$F$ (Fig.~\ref{voice}, blue heads) and that the result set is $\{P_1, P_2, P_3, P_5\}$.
+For all, function $\pi()$ composed with the normalization \textsc{VNorm} yields a sequence
+of 6 intervals $<6, -3; -3; 1; 2; -2>$. Intuitively $P_1$ and $P_2$ (Fig.~\ref{patterns})
+should be ranked first, and $P_5$ (Fig.~\ref{matchex}) should be ranked last. 
+
+It is important to note that this ranking does not compare arbitrary fragments, but fragments
+that have an identical melodic pattern. We take advantage of this specificity to
+operate at two levels. The first level measures the similarity of the 
+``melodic rhythm'', i.e., the respective duration of pairwise intervals in each fragment.
+To this end we define the notion of \emph{blocks}.
+
+\begin{Definition}
+Let $F$ be a fragment such that $\pi(\textsc{VNorm}(F)) = <I_1, \cdots, I_n>$. By definition of
+$\pi$ and \textsc{VNorm}, each 
+interval $I_j, j \in [1,n]$ is represented in $F$  by a sequence 
+$<p^i_1, e^i_2, \cdots, e^i_{k-1}, p^i_k>$ such that: 
+\begin{itemize}
+   \item $p^i_1$ and $p^i_k$ are two pitches, and $interval(p^i_1, p^i_k) = I_i$
+   \item each $e^i_l, l \in [2,k-1]$ is either a rest, or a pitch such that  $e^i_l = p^i_1$
+\end{itemize}
+
+We call $<p^i_1, e^i_2, \cdots, e^i_{k-1}>$ the \emph{block} $B_i$ of 
+$I_i$ in $F$.
+\end{Definition}
+
+A block is the largest subsequence of a fragment that covers 
+a non-null interval.  The concept of block is illustrated by Fig.~\ref{rhythm-blocks} 
+for $P_1$, $P_3$ and $P_5$. 
+
+\begin{figure}[ht]
+ \centerline{
+ \includegraphics[width=10cm]{../figures/rhythm-blocks}}
+ \caption{\label{rhythm-blocks} Blocks for $P_1$, $P_3$, and $P_5$}
+\end{figure}
+
+The first level of the ranking function evaluates the similarity of two fragments $F_1$ and $F_2$
+by comparing the pairwise durations
+of their blocks. The rationale is that if these durations are similar, the only difference lies
+in either repeated notes or rests inside each block.  Fig.~\ref{rhythm-blocks} shows for instance
+that block durations in $P_1$ and $P_3$ are exactly the same, which makes them almost identical.
+The difference is internal to each block (for instance block 2, in green). On the other hand,
+$P_1$ and $P_5$ turn out to be quite dissimilar. 
+
+The function that computes  this similarity is simple and efficient. We first normalize the fragment duration,
+and sum up the difference of durations between corresponding pairs of blocks.
+
+\begin{algorithm}
+\caption{Ranking procedure}\label{alg:ranking}
+\begin{algorithmic}[1]
+\Procedure{Ranking}{$F_1,F_2$}\\
+\textbf{Input:} $F_1$, $F_2$, such that $\pi(\textsc{VNorm}(F_1)) = \pi(\textsc{VNorm}(F_2))  = <I_1, \cdots, I_n>$\\
+\textbf{Output:} a similarity $s \in [0,1]$
+\State $s\gets 0$
+\State $d_1 \gets duration(F_1); d_2 \gets duration(F_2)$
+\For{$i := 0\ \textbf{to}\ n$}\Comment{Loop on the blocks}
+\State $s \gets s + | dur (B^1_i)/d_1 - dur (B^2_i)/d_2 |$
+\EndFor
+\If {$s = 0$}
+ $s \gets TieBreaking (F_1, F_2)$
+\EndIf
+\State \textbf{return} $s/2$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+%ISOMETRIES OF THE SPACE OF CONVEX BODIES CONTAINED IN A EUCLIDEAN BALL
+%https://link.springer.com/content/pdf/10.1007%2FBF02761407.pdf
+
+
+If it turns out that all block durations are pairwise identical, 
+a tie-breaking function has to be called. This is the only situation where we might have to examine internal of blocks. By definition of blocks, this internal representation only consists
+of rhythmic data: rests and repeated notes. Any standard  text comparison method (edit distance,
+Levhenstein distance) can be used.
+%\remNT{Utile de parler de la fonction tie-breaking?}
+%\remPR{Oui, si on a la place. Je crois que le fonction de ranking renvoie bien une similarité en 0 et 1, faudrait verifier.}
+%\remNT{J'ai verifie, ca fait bien max 2 dans le cas on en inverse les proportions. Et c'est une distance, est-ce qu'on l'inverse pour faire une similarite ?}
+
+\section{Indexing}\label{sec:implem}
+
+We now describe how our functions can be integrated in a search engine. For the sake of
+concreteness, our description relies on \elasticsearch/, but the method works for any similar system (e.g., Solr)
+that uses inverted index.
+
+\subsection{Encoding}
+
+An index in \elasticsearch/ is built on JSON documents. Each field in such a document can be either \emph{indexed}, \emph{stored}
+or both. Indexing a field means that \elasticsearch/ supports full-text searches on the field's content.
+Storing a field means that the field's content is stored in the index.
+Our index features a \texttt{ngram} field for searching, and a \texttt{sequence} field for the ranking. 
+
+Given a voice $V$ 
+and the sequence of intervals of its normalization  $\pi(\textsc{VNorm}(V)) = <I_1, \cdots, I_k>$,
+we compute the list of $n$-grams $\{<I_i, \cdots, I_{i+n-1}>, i \in [1, k-n+1]\}$, where $n$, the $n$-gram size,
+is an index configuration parameter. If, for instance, the sequence of intervals is
+$<6, -3; -3; 1; 2; -2>$, the list of $3$-grams is  $\{<6, -3; -3>, <-3; -3, 1>, <-3,1,2>, <1; 2; -2>\}$.
+
+Each $n$-gram is then encoded as a character string which constitutes a \emph{token}. These
+tokens are finally concatenated in a large character string, separated by a white space.
+
+\begin{Example}
+If we can encode positive integers with \texttt{a}, \texttt{b}, \texttt{c}, etc.,
+and the minus sign by \texttt{m}, we would obtain, for the  list of $n$-grams
+$\{<6, -3; -3>, <-3; -3, 1>, <-3,1,2>, <1; 2; -2>\}$, the character
+string 
+$$\texttt{fmcmc mcmca mcab abmb}$$ 
+\end{Example}
+
+Those strings are put in the \texttt{ngram} field and indexed by \elasticsearch/ as any regular text.
+Obviously, more general and efficient encodings exist.
+
+\subsection{Searching}
+
+
+We
+can then run keyword queries and, more importantly, \emph{phrase queries} where \elasticsearch/ retrieves
+the fields that contain a list of tokens that appear in a specific order. Taking the pattern $F$
+of our running example, we apply
+the very same transformation and compose the following query:
+
+\begin{small}
+\begin{minted}{json}
+{"query": {"match_phrase": 
+     {"ngram": "fmcmc mcmca mcab abmb"} } }
+\end{minted}
+\end{small}
+
+The search engine then does the rest of the job for us. It finds all the indexed documents such that the
+\texttt{ngram} field contains the phrase. However, by default, ranking is based on textual features
+that do not match what we expect. We therefore need to replace the default ranking method.
+
+\subsection{Ranking}
+
+Ranking functions can be overridden in \elasticsearch/ (and actually in any search engine that relies
+on the Lucene library) \cite{Lucene08,Tra12}. To this end, we must provide a Java function that implements the ranking method exposed
+in Section~\ref{sec:rank}. \elasticsearch/ calls this function at query time over the result set
+and produces a  score for each according to the similarity function. The result is sorted on this score, and made accessible
+to the client application via an iterator-like mechanism~\cite{doc-dsl-ES} called \textit{SearchScript}.
+
+Our ranking function operates on a voice to identify the matching occurrences, and to measure
+the similarity between the search pattern and each occurrence. We must store
+in \elasticsearch/ an encoding of the voice that can be accessed during the query evaluation. This
+is the purpose of the \texttt{sequence} field.
+
+Basically, we encode in JSON a sequence of the music items that constitute a voice. An excerpt
+is shown below where each item features the octave, pitch and duration.
+
+\begin{footnotesize}
+\begin{minted}{json}
+[ {"o":4, "id":"m60", "s":"A", "a":0, "d":8.0}, 
+  {"o":4, "id":"m83", "s":"A", "a":0, "d":8.0} ]
+\end{minted}
+\end{footnotesize}
+
+Note that we also store the id of each item, which is actually the id of the corresponding
+element in the XML encoding of the score\footnote{\neuma/ currently
+uses MEI, because the current version of MusicXML does not supply element ids.}. The ranking function
+integrates in the query result the list of matching occurrences represented as sequences
+of such item ids. The client application can then highlight each occurence. 
+
+\noindent
+\textbf{Note}: our system is available on-line, but we cannot disclose its address due to anonymization requirements.
+In case of acceptance, readers will be able to test on-line the searching, ranking and highlighting features.
+
+%We give in appendix 
+%(Fig.~\ref{screenshot-search}) a screenshot of the search interface of \neuma/, 
+%with highlighted occurences matching a pattern shown in the top-right part. The interested
+%is also invited to visit \neuma/ at \url{http://neuma.huma-num.fr} and test the search
+%function.
+
+\subsection{Query expansion}
+
+Our method relies on a strict matching of a sequence of intervals. 
+We must be very careful if we wish to add some flexibility here, because we would likely return the whole database
+for each query if we accept unbounded melodic transformations. We can, however, consider those that
+can be seen as meaningful from a musical point of view. For instance, diatonic mutations of intervals
+(e.g., accepting both minor and major thirds or sixths in the matching operation) probably makes senses 
+and can improve significantly the recall of our method.
+
+We have integrated the synonym query expansion 
+feature of \elasticsearch/ engine (e.g., the ability to match "car" and "vehicle")
+to implement this feature.  To achieve this, we decided to produce a list of synonyms for major thirds or sixths.
+These means that an interval 'c' can be similar to 'd' or interval 'h' to 'i'.
+We can therefore give every similar patterns that could match, in order to give more flexibility during the matching process.
+
+The following ngrams are then considered to be similar to the given query pattern. Any similar interval produces a new ngram combination. 
+
+\begin{verbatim}
+cbh, dbh, dbi, cbi
+\end{verbatim}
+
+In order to integrate the list of synonyms to \elasticsearch/, the list is given as an analyzer \textit{"melodic\_transformation"} to the index and matching inverted lists are merged at query time.
+To take into account this new analyzer, the query is modified to:
+
+\begin{small}
+	\begin{minted}{json}
+{"query": {"match_phrase": 
+	{"ngram": "fmcmc mcmca mcab abmb",
+	 "analyzer": "melodic_transformation"}
+} }
+	\end{minted}
+\end{small}
+
+To find the matching occurrences, we need to modify the algorithm in order to integrate the synonyms. For this, the computation of intervals for major third and sixth can be authorized, then: 1,5 $\sim$ 2 and 3 $\sim$ 3,5.
+So, line~14 of Algorithm~\ref{alg:occurrences} is modified to integrate those similarities.
+
+This synonym feature can be enhance by taking into account a similarity measure between those synonyms. It is possible to give an oriented graph weighted with similarity values between every ngram synonyms. Then, the scoring function will computing a similarity score based on those weighted similarities. We wish to show that \elasticsearch/ provides a framework that helps to produce new similarity measures on our data model.
+
+\subsection{Implementation}
+
+The integration of our approach in \elasticsearch/ needs to preprocess musical scores to normalize them, and then to compute the ranking in the search engine on query-time.
+
+The first step consists in a Python scripts that normalizes voices from scores (Algorithm~\ref{alg:norm}), extracts corresponding ngrams, and produce a JSON document for each score that is sent to the \elasticsearch/ REST API. This document also contains corpus and opus ids, syllables from lyrics voices which can be queried to get more relevant and complex queries.
+
+\remNT{Ce n'est peut être pas utile que je rajoute un document JSON stocké (ngram + voix) ?}
+
+To achieve the second step, the \texttt{ScoreSim} scoring module has been implemented in Java in order to import it in \elasticsearch/.
+For this, a \textit{SearchScript} needs to be inherited in order to produce a plugin for \elasticsearch/.
+This plugin takes queries' parameters and instanciates a scoring function which will process every matching scores.
+The scoring function \texttt{ScoreSim} implements  Algorithms~\ref{alg:occurrences} (finding block occurrences) and \ref{alg:ranking} (producing scores for ranking).
+
+In order to take into account synonyms in \elasticsearch/, the list of ngram synonyms needs to be given to the REST API\footnote{\url{https://www.elastic.co/guide/en/elasticsearch/guide/current/using-synonyms.html}} offline. We have generated the list of all combinations of third and sixth transformation for each possible ngram available in the repository.
+This list is imported in \elasticsearch/ and then processed on-the-fly for each query.
+
+The following query integrates every features that are proposed in our approach: ngram search (\textit{melody.value}), synonyms analyzer (\textit{melodic\_transformation}), and the \texttt{ScoreSim} function (\textit{script\_score}). In the latter, the parameter "\textit{query}" gives the list of pitches used in \texttt{ScoreSim} in order to produce the score value from Algorithm~\ref{alg:ranking}.
+
+\begin{small}
+	\begin{minted}{json}
+{"query":{
+  "function_score": {
+    "query": {
+      "match_phrase": {"melody.value": "mcbb",
+                       "analyzer": "melodic_transformation"}},
+    "functions": [{"script_score": {
+      "script": {"source": "scorelib", "lang": "ScoreSim",
+        "params": {
+          "query":[{"s":"A", "o":4, "id":"m42", "a":0, "d":8.0},
+                   {"s":"E", "o":3, "id":"m43", "a":0, "d":4.0},
+                   {"s":"G", "o":3, "id":"m44", "a":0, "d":4.0},
+                   {"s":"B", "o":4, "id":"m45", "a":0, "d":6.0}]
+}}}}]}}} 
+  \end{minted}
+\end{small}
+
+To illustrate the querying process Figure~\ref{../figures/Elasticsearch-implem} shows the following steps: \textbf{1)} transform the melodic pattern into the \elasticsearch/ DSL (Domain Specific Language), \textbf{2)} \elasticsearch/ gets all the matching score corresponding to the given ngram and eventually to their synonyms, \textbf{3)} instantiate the \texttt{ScoreSim} plugin and process every score, \textbf{4)} extract occurrences on each instance and then its score value, \textbf{5)} and finally, \elasticsearch/ sorts the whole result-set according to the produced scores and sends the result.
+
+\fig{../figures/Elasticsearch-implem}{\texttt{ScoreSim} integration in \elasticsearch/}
+
+\subsection{Performance}
+
+%Due to space restrictions, we limit the report of our performance evaluation to scalability aspects.
+
+In order to study the impact of our approach on the computation time, 
+we apply different queries on our corpora. This corpora is composed of several corpus which represents 4,950  scores in a whole.
+We will vary the corpus size by cumulating them.
+
+To study the effect of the matching process, we have chosen four different queries to apply with various patterns, from unfrequent to more frequent ones.
+The four queries were chosen 
+based on the popularity of the stored patterns (ngrams). 
+Table~\ref{tab:queryPatterns} gives the query patterns, the corresponding total number of matches in the corpora and the number after applying the query expansion (synonyms). We can see that query q2 is clearly expanded since \texttt{mcmcmc} has 7 synonyms and produces a large amount of matches (2.5 times more). At the opposite, query q3 has no synonyms and do not enlarge its result-set.
+
+\begin{table}[h]
+\begin{tabular}{c|c|c|c|c}
+							& q1 & q2 & q3 & q4\\
+\hline
+Querying pattern & \texttt{demc} & \texttt{mcmcmc} & \texttt{bmbb} & \texttt{bmbmc}\\
+\hline
+Total number of matching scores & 204 & 719 & 877 & 2,225\\
+\hline
+Total number with query expansion & 242 & 1867 & 877 & 2,236\\
+\end{tabular}
+\caption{\label{tab:queryPatterns}Query patterns}
+\end{table}
+
+Figure~\ref{fig:matchingRatio} shows the evolution of the number of matching scores wrt. the corpus size. It gives both matching scores for normal queries (plain lines) and expanded queries (dashed lines). 
+Each query follows a specific ratio of matchings and is globally homogeneous all over the corpora. 
+According to the query expansion, we can see that q1 and q4 provides few more matchings, while q2 witnesses a really different behavior where the number of matchings grows drastically due to the number of synonyms. It will help to see how the query expansion impacts performances.
+
+\input{figs/matchingRatio.tex}
+
+The execution time is plotted in Figure~\ref{fig:executionTime} for the 4 different queries.
+It shows both normal pattern queries (plain lines) and expanded queries (dashed lines).
+This allows to investigate both the robustness 
+with respect to various results sizes, and issues related to false positives.
+
+Each query is sub-linear in the result size. Query q4 is a frequent pattern
+which returns 2,225 matching scores (almost 45\% of the corpora). It is executed in 277 ms. The small number of synonyms has few impacts on the gobal processing time.
+At the opposite, q1 is extremely efficient due to its selectivity. It produces  204 scores in 22 ms.
+One interesting effect can be seen for query q2 where the number of matching synonyms leads to more computation time but it only 2.1 times more (for 2.5 times more matching scores).
+
+\input{figs/executionTime.tex}
+
+% \begin{figure}[ht]
+%   \centerline{
+%     \includegraphics[width=.45\textwidth]{figs/executionTime.png}}
+%   \caption{\label{fig:executionTime} Execution time with respect to corpus size}
+% \end{figure}
+ 
+
+%\input{figs/executionTimeSynonyms.tex}
+
+
+
+
+%\input{figs/executionPerScoreSynonyms.tex}
+
+To study the time spent per score, Figure~\ref{fig:timeVSsize} gives in log scale the average time to process each score with respect to the corpus size.
+We can see that an initial cost is visible at the beginning of the curves, this constant penalty is associated to the initialization of the \texttt{ScoreSim} user-defined similarity function and levels up the average computation time.
+For small corpus, computing a score depends mostly on the number of occurrences found in voices (q1) which can vary from one corpus to another.
+Fortunately this effect is smoothed for bigger corpus even for frequent patterns or expanded queries, the ranking function takes less than 0.12ms to process each score.
+ 
+ \input{figs/executionPerScore.tex}
+ 
+ 
+\section{Related work and discussion}\label{sec:rw}
+
+Our approach combines similarity searches based on textual music encoding, 
+scalable search, and rhythm-based ranking. None of these techniques, considered
+separately, is completely new. But their association in a consistent setting,
+and the trivial implementation in a standard system make, in our opinion,
+our solution quite attractive. 
+
+\subsection{Related Work}
+% Similarity
+Music similarity has been an active MIR research topic over the last decades~\cite{Casey2008}. The general
+goal is to evaluate the likeness of two musical sequences, in a way that matches as much
+as possible the human listener perception. A major problem raised by this definition
+is that similarity judgements are highly dependent on both the content being compared and
+on the user taste, culture, and experience~\cite{JDE07,ERP17}. This encourages 
+a proliferation of methods, often originated from different fields, and 
+makes difficult their comparison. The following is a brief overview that positions
+our approach. The interested reader is referred to the recent survey~\cite{Velardo2016}
+which summarizes the recent trends observed in the SMS track of the MIREX competition.
+
+The selection of musical parameters
+is probably one of the most important choices that characterize a similarity method. We rely
+on pitches and durations, which are generally considered as expressive enough. 
+Using sequences to represent both parameters is primarily motivated by 
+our objective to integrate our methods in a standard search engine, and to 
+benefit from an index structure. This eliminates more complex representations where the price
+to pay is a less expressive matching semantic. Some important parameters,
+e.g., metric accent, structure or harmonic 
+are ignored because they most often lead to tree-based encodings that are much less easily indexable. Geometric approaches,
+such as~\cite{TGVWO03},
+are also less suitable in this indexing perspective. Multidimensional structures are complex, 
+and their  performances are known to
+fall down as the dimension increases~\cite{Samet2006}. Moreover, 
+they have not yet found their in off-the-shell search engines.
+
+% Textual encoding
+Textual encoding of symbolic music representation is an old and attractive idea
+because standard text algorithms can be used. The HumDrum toolkit~\cite{Knopke08}
+relies on a specialized text format and adapts Unix file inspection tools for music analysis
+purposes. 
+Exact and approximate
+string matching algorithms for melody matching have been used in ThemeFinder~\cite{Kornstaedt98} or Musipedia~\cite{PLT01}.
+Many algorithms for efficient
+computation of similarity matching through exhaustive searches
+have been proposed~\cite{CCF04,CCF05,CI04,CCIMS05}. 
+Specialized rhythm similarity functions are proposed and compared in~\cite{Toussaint04}.
+
+Text-based approaches are simple solutions, with two important limitations. First, these methods are 
+designed for text and are not well adapted to the specificities of music representation. Combining
+the two main dimensions (pitches and rhythm) is a single character string for instance is not easy, 
+and small music variants may result in important syntactic differences.  Since, in addition,
+we usually search for a match between a query pattern and any subsequence of a voice encoding, 
+it is unclear which substrings have to be chosen before applying the approximate matching operation. 
+
+% Scalability
+Second, these methods
+do not scale since the whole database has to be inspected for each query.
+Text matching algorithms are not always easily supported by an index. In the specific context of the edit
+distance, several indexing methods have been suggested, an overview of which can be found in \cite{Navarro00}.
+The Dynamic Time Warping distance is another popular method, for which sophisticated indexing structures
+have been proposed~\cite{KR05}. None of them is available beyond research prototypes.
+
+The easiest way to benefit
+from an inverted index is to split musical sequences in $n$-grams. This has been
+experimented in several earlier proposals~\cite{Downie99,NO04,DR04,CJ06}. Each $n$-gram plays the role
+of a ``token'' and standard search methods apply. Keywords search will retrieve a sequence 
+even though a subset of the $n$-gram match those of the patterns. This is somewhat similar to a similarity search.
+Phrase search, on the other hand, corresponds to an exact search of the indexed sequence. The flexibility lies
+in the pre-processing transformation applied to both the stored sequence and the query pattern.
+
+Ranking is an essential part of an information retrieval system. Any query with a few keywords retrieves from the Web
+millions of documents. The quality of the result is mostly estimated by the ability of the search engine to top-rank
+the most relevant ones. We believe that our proposal, which combines a pre-processing normalization step,
+a search phase based on the melodic profile and a ranking based on the rhythmic profiles, completes earlier
+attempts to adapt text-based retrieval to music retrieval, and results in a complete workflow
+which achieves a satisfying trade-off between the filtering impact, the ranking relevancy and
+the overall efficiency.
+
+% Ranking
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+We described in this paper a practical approach to the problem of indexing
+pattern-based searches in a large score library. Our solution fulfills three major 
+requirements for an information retrieval system: (i) it supports search with 
+a significant part of flexibility, (ii) it proposes a ranking method consistent with
+the matching definition, and (iii) it brings scalability thanks to its
+compatibility  with the features of state-of-the-art search engines.  We fully 
+implemented our solution, including the internal ranking function for \elasticsearch/,
+and we will be pleased to supply our software components to any interested institution
+that wishes to propose a content-based search mechanism to its users. We are currently working on 
+an open-source release of our packages on GitHub.
+ 
+The proposal presented in this paper is by no way a final achievement. Several extensions can be envisaged. Let us mention the ones that seem most promising at the time of writing.
+
+\noindent
+\textbf{Score analyzers.} Currently, the main transformation is the normalization of voices
+described by Algorithm~\ref{alg:norm}. However, several others are possible with regards to, e.g.,  the
+management of grace notes, the simplification of melodic profiles, or how we treat repeated notes, to
+name a few. Search engines propose numerous methods of text processing that can be combined in order
+to form a dedicated \emph{analyzer}. We can do the same thing for music indexing, letting the user define
+ad hoc music analyzers depending on her needs.
+
+%\noindent 
+%\textbf{Acknowledgments.} This work is funded by the French ANR project
+%\munir/ (\url{http://www.neuma.fr}).
+
+
+\bibliographystyle{cmj}
+\bibliography{../biblio}
+
+
+
+%\begin{figure*}[ht]
+% \centerline{
+% \includegraphics[width=\textwidth]{../figures/screenshot-search}}
+% \caption{\label{screenshot-search} The search interface of \neuma/, highlighting matching occurrences}
+%\end{figure*}
+
+\end{document}

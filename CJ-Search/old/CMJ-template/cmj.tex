@@ -1,0 +1,143 @@
+%
+%-----------------------------------------------------------
+%% Computer Music Journal LaTeX template
+%%
+%% September  2009
+%% Author: Cornelia Kreutzer, University of Limerick
+
+
+
+%---Document preamble
+%
+\documentclass[letterpaper, 12pt]{article}
+
+
+\usepackage{cmjStyle} %use CMJ style
+\usepackage{natbib} %natbib package, necessary for customized cmj BibTeX style
+\bibpunct{(}{)}{;}{a}{}{,} %adapt style of references in text
+\doublespacing
+\raggedright % use this to remove spacing and hyphenation oddities
+%\setlength{\parindent}{0} % first para indent?
+\setlength{\parskip}{2ex}
+\parindent 24pt
+\urlstyle{same} % make url tags have the same font
+\setcounter{secnumdepth}{-1} % remove section numbering
+
+
+%% The package endfloat moves all floats (figures, tables...) to the end of the paper, as required for the final version of a CMJ paper.
+%% Leave this package commented out for initial submission, but uncomment it for final version. 
+% \usepackage{endfloat}
+
+%---Document----------
+\begin{document}
+
+{\cmjTitle Insert Your Article's Title Here}
+\vspace*{24pt}
+
+(In the initial submission, omit all the following author information to ensure anonymity during peer review.)
+
+%author - name
+{\cmjAuthor Firstname Lastname}
+%author - address
+\newline
+\begin{cmjAuthorAddress}
+	Sound Computing Group\\
+	University of Anywhere\\
+	1234 Anywhere Street\\
+	Anywhere, Anwhere 012345 USA\\
+	email@email.com
+\end{cmjAuthorAddress}
+
+\vspace*{24pt}
+{\cmjAuthorPhone << AUTHOR TELEPHONE (not for publication): +44 999 999 9999 >>}
+\vspace*{24pt}
+
+
+% use of asterisk in section number to remove numbering
+\section*{Abstract}
+Insert abstract here.
+
+
+\section{<<Start article>>}
+Insert introductory body text here, without a heading.
+For style questions not answered here, visit http://mitpress.mit.edu/cmj to see the submission guidelines and previously published articles.  Most issues include a freely downloadable feature article.  Questions may be directed to cmj@mitpress.mit.edu; please put [CMJ MS] in the subject line.
+
+\parskip 18pt
+
+%------------------------------------------------
+%
+% format for Heading-A style
+\section{Format for Heading-A Style; Use This for Major Section Headings}
+
+Insert body text here.  Note that CMJ does not use section numbers for any level of heading.
+
+\vspace*{24pt}
+
+% format for Heading-B style
+\subsection{Format for Heading-B Style; Use This for Subsection Headings}
+
+Insert body text here.  
+
+% format for Heading-C style
+\subsubsection{Format for Heading-C Style; Use This for Minor Sub-subsection Headings}
+
+Insert body text here.
+
+In the initial manuscript submission, you are encouraged to include figures (with captions) inline with the text, for ease of reading during the review process. For example, like this:
+
+% include figures in text with captions for initial submission, like this:
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics{myFigure.pdf}
+\caption{Insert Figure caption here.}
+\label{fig:myFigure}
+\end{center}
+\end{figure}
+
+However, for the final version after the manuscript has been accepted, all figures should be moved to the end so that the text only contain markers like ``[Figure 1 about here]'' near where the figure would normally have occurred. You can rearrange the text to this effect simply by enabling the package {\tt endfloat} as suggested in the header of this document.
+
+
+% equations
+You can insert equations inline with the text like this:
+
+\begin{equation}
+	\label{radupdate}
+		\Psi_{N}^{n+1} = m_{N}^{(-)}\Psi_{N-1}^{n}+m_{N}^{(0)}\Psi_{N}^{n} + q_{N}\Psi_{N}^{n-1}
+\end{equation}
+where
+\begin{eqnarray*}
+	m_{N}^{(-)} &=& \frac{\lambda^2}{2\tau}\left(S_{N+1}+2S_{N}+S_{N-1}\right)\\
+	m_{N}^{(0)} &=& \frac{1}{\tau}\left(2-\frac{\lambda^2}{2}\left(S_{N+1}+2S_{N}+S_{N-1}\right)\right)\\
+	q_{N} &=& \frac{1}{\tau}\left(\frac{\gamma^2 k^2}{2h}\left(S_{N+1}+S_{N}\right)\left(\frac{\alpha_{1}}{k}-	\alpha_{2}\right)-1\right)
+\end{eqnarray*}
+and where 
+\begin{equation*}
+	\tau = \frac{\gamma^2 k^2}{2h}\left(S_{N+1}+S_{N}\right)\left(\frac{\alpha_{1}}{k}+\alpha_{2}\right)+1
+\end{equation*}
+
+% Use this environment for inserting source code examples.
+% Note, that this will print out text in the document exactly as you type it here in the .tex file. That means you can add empty spaces, tabs, blank lines here and they will be printed out like this in the document.). 
+%For more information check out the LaTeX-Package 'fancyvbr' documentation
+%
+\begin{Verbatim}[fontfamily=courier, xleftmargin=\parindent]
+Use this style for program code, for example:
+main() {
+    printf("Hello World\n");    
+}
+\end{Verbatim}
+
+%use of references
+Some examples for the use of references in the text:\\
+%author name in sentence, single authors
+\cite{Ano08}, \cite{Bele68}, \cite{Ther99}, \cite{Zica02},
+%author name in sentence, multiple authors
+\cite*{VeRo00}, \cite*{AtDa04}, 
+%reference in brackets, multiple authors
+\citep*{AtDa04} 
+
+
+%References
+\bibliographystyle{cmj}
+\bibliography{cmjbib}
+
+\end{document}
