@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{\PYGZob{}}\PYG{n+nt}{\PYGZdq{}query\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{n+nt}{\PYGZdq{}match\PYGZus{}phrase\PYGZdq{}}\PYG{p}{:}
-	\PYG{p}{\PYGZob{}}\PYG{n+nt}{\PYGZdq{}ngram\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}fmcmc mcmca mcab abmb\PYGZdq{}}\PYG{p}{,}
-	 \PYG{n+nt}{\PYGZdq{}analyzer\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}melodic\PYGZus{}transformation\PYGZdq{}}\PYG{p}{\PYGZcb{}}
-\PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZcb{}}
-\end{Verbatim}
