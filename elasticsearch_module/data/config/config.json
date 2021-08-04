@@ -1,0 +1,5 @@
+{
+	"ES":"localhost",
+	"ES_port":9200,
+	"ES_index":"scorelib"
+}

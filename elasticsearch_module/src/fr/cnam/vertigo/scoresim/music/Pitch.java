@@ -7,6 +7,7 @@ public class Pitch {
 	public String step, id;
 	public double duration;
 	public boolean tied, isRest;
+	protected double height = Double.NEGATIVE_INFINITY;
 
 	public Pitch (String id, int position, String step, boolean tied, int octave, boolean isRest, int alteration, double duration){
 		this.position = position;
@@ -19,8 +20,27 @@ public class Pitch {
 		this.duration = duration;
 	}
 
+	public Pitch (int position, double height, String duration) {
+		this.position = position;
+		this.duration = ratio2Duration(duration);
+		this.height = height;
+	}
+
+	protected double ratio2Duration (String duration) {
+		int i = 0;
+		if((i = duration.indexOf("/")) > 0) {
+			return new Double (duration.substring(0, i)).doubleValue()
+					/ new Double (duration.substring(i+1)).doubleValue();
+		} else {
+			return new Double (duration).doubleValue();
+		}
+	}
+
 	public double getHeight () throws ScoreSimException{
-		return Pitch.height(this);
+		if(height == Double.NEGATIVE_INFINITY) {
+			height = Pitch.height(this);
+		}
+		return height;
 	}
 
 	public static double frequency (String step, int octave, int alteration) throws ScoreSimException{
@@ -56,6 +76,9 @@ public class Pitch {
 	}
 
 	public String toString (){
-		return step+octave+(alteration!=0?" "+alteration:"");
+		if(step != null)
+			return step+octave+(alteration!=0?" "+alteration:"");
+		else
+			return position+"["+height+"/"+Math.round(duration*100.0)/100.0+"]";
 	}
 }

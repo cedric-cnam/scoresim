@@ -1,12 +1,8 @@
 package fr.cnam.vertigo.scoresim.distance;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import fr.cnam.vertigo.scoresim.ScoreSimException;
@@ -20,10 +16,10 @@ import fr.cnam.vertigo.scoresim.music.Pitch;
  *
  */
 public class DistanceNeuma{
-	public QuerySequence querySeq;
+	private QuerySequence querySeq;
 	public static double MAX_SCORESIM_DISTANCE = 1000;
 	public static final double MIN_SCORE = 1 / DistanceNeuma.MAX_SCORESIM_DISTANCE;
-	public int distanceType;
+	private int distanceType;
 
 	/**
 	 * Intialize the query pattern with a String containing a JSON Array, that is translated into a Sequence Block.
@@ -38,40 +34,37 @@ public class DistanceNeuma{
 			throw new ScoreSimException ("The query block is void");
 	}
 
-	private void parseQuery (String JSON) throws ParseException, ScoreSimException{
-		JSONParser parser = new JSONParser();
-		Object o = null;
-		try{
-			o = parser.parse(JSON);
-		} catch (ParseException e){
-			throw new ScoreSimException ("parseQueryException: "+JSON);
-		}
+	private void parseQuery (String notes) throws ParseException, ScoreSimException{
 		List<Pitch> pitches = new ArrayList<Pitch> ();
 		try{
-			JSONObject jsonObject = (JSONObject)o;
-			JSONArray jsonItems = ((JSONArray)jsonObject.get("items"));
+			int num = 0;
 			int i=0;
-			@SuppressWarnings("unchecked")
-			Iterator<JSONObject> it = jsonItems.iterator();
-			JSONObject d;
-			while(it.hasNext()){
-				d = it.next();
-				pitches.add(new Pitch (d.get("id").toString(),
-						i++, 
-						d.get("step").toString(),
-						((Boolean)d.get("tied")).booleanValue(),
-						((Long)d.get("octave")).intValue(),
-						((Boolean)d.get("is_rest")).booleanValue(),
-						((Long)d.get("alteration")).intValue(),
-						((Double)d.get("duration")).floatValue()));
+			String note;
+			while(num>=0){
+				note = notes.substring(num+1, notes.indexOf(")", num+1));
+				pitches.add(new Pitch (i++,
+						new Double(note.substring(0, note.indexOf("|"))).doubleValue(),
+						note.substring(note.indexOf("|")+1)));
+				num = notes.indexOf("(", num+1);
 			}
-		} catch (ClassCastException e){
-			throw new ScoreSimException("parseQueryException/ CastException:"+e.getLocalizedMessage()+"/"+e.getMessage()); 
+		} catch (Exception e){
+			e.printStackTrace();
+			throw new ScoreSimException ("parseQueryException: "+notes);
 		}
-		
 		querySeq = QuerySequence.getQuerySequence(distanceType, pitches);
 	}
 
+	public void initiateSequence() {
+		querySeq.initiateSequence();
+	}
+
+	public MatchingSequence matchingSequence(String corpus, Pitch p)  throws ScoreSimException{
+		return querySeq.matchingSequence(corpus, p);
+	}
+
+	public MatchingSequence endMatching() {
+		return querySeq.endMatching();
+	}
 	/**
 	 * Special distance measure for Neuma. The input consists of two sequences
         that share the same melodic profile: we know that the succession of intervals is the same.

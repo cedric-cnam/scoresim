@@ -41,7 +41,8 @@ public class MatchingSequence {
 	}
 
 	public String toString(){
-		StringBuffer sb = new StringBuffer (corpus+" (");
+		StringBuffer sb = new StringBuffer (//corpus+
+				" (");
 		for(Pitch p : pitches){
 			sb.append(p +";");
 		}

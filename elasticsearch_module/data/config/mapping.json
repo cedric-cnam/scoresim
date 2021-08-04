@@ -1,0 +1,17 @@
+{
+	"settings": {
+		"number_of_shards": 1
+	},
+	"mappings": {
+		"properties": {
+			"id":{"type":"text"},
+			"voice": {"type": "integer"},
+			"opusref": {"type": "text"},
+			"opusurl": {"type": "text"},
+			"melodic": {"type": "text"},
+			"diatonic": {"type": "text"},
+			"rhythmic": {"type": "text"},
+			"notes": {"type": "text"}
+		}
+	}
+}

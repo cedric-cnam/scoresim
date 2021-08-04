@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import fr.cnam.vertigo.scoresim.ScoreSimException;
-import fr.cnam.vertigo.scoresim.distance.QuerySequence;
+import fr.cnam.vertigo.scoresim.distance.DistanceNeuma;
 
 public class MusicSummary implements Iterable<MatchingSequence>{
 	private List<MatchingSequence> sequences;
@@ -31,28 +30,17 @@ public class MusicSummary implements Iterable<MatchingSequence>{
 		return corpus;
 	}
 
-	public void matchingPitches (String jsonString, QuerySequence queryBlock) throws ScoreSimException, ParseException{
+	public void matchingPitches (String jsonString, DistanceNeuma distanceNeuma) throws ScoreSimException, ParseException{
 		sequences = new ArrayList<MatchingSequence> ();
-		parsePitches(jsonString, queryBlock);
-		
+		parsePitches(jsonString, distanceNeuma);
 	}
 
-	@SuppressWarnings("unchecked")
-	private void parsePitches (String jsonString, QuerySequence queryBlock) throws ParseException, ScoreSimException{
+	private void parsePitches (String jsonString, DistanceNeuma distanceNeuma) throws ParseException, ScoreSimException{
 		JSONParser parser = new JSONParser();
 		JSONObject d = (JSONObject)parser.parse(jsonString);
-		corpus = (String)d.get("ref");
-		String summary = (String)d.get("summary");
-		d = (JSONObject)parser.parse(summary);
-		JSONObject parts = (JSONObject)d.get("parts");
-		parts = (JSONObject)parts.get("all_parts");
-		Iterator<String> voices = parts.keySet().iterator();
-		String key;
-		while(voices.hasNext()){
-			key = voices.next();
-			d = (JSONObject)parts.get(key);
-			getMatchingSequences(corpus, ((JSONArray)d.get("items")).iterator(), queryBlock);
-		}
+		corpus = (String)d.get("opusref");
+		String notes = (String)d.get("summary");
+		getMatchingSequences(corpus, notes, distanceNeuma);
 	}
 
 	/**
@@ -61,27 +49,28 @@ public class MusicSummary implements Iterable<MatchingSequence>{
 	 * @param queryBlock
 	 * @throws Exception
 	 */
-	private void getMatchingSequences (String corpus, Iterator<JSONObject> voice, QuerySequence querySequence) throws ScoreSimException{
-		JSONObject d;
+	private void getMatchingSequences (String corpus, String notes, DistanceNeuma distanceNeuma) throws ScoreSimException{
+		String note;
 		int i=0;
+		int num=0;
 		Pitch p;
 		MatchingSequence ms;
 
-		querySequence.initiateSequence();
+		distanceNeuma.initiateSequence();
 		
-		while(voice.hasNext()){
-			d = voice.next();
-			p = new Pitch ((String)d.get("index"), i++, (String)d.get("step"),
-					((Boolean)d.get("tied")).booleanValue(), ((Long)d.get("octave")).intValue(),
-					((Boolean)d.get("is_rest")).booleanValue(), ((Long)d.get("alteration")).intValue(),
-					((Double)d.get("duration")).floatValue());
+		while(num>=0){
+			note = notes.substring(num+1, notes.indexOf(")", num+1));
+			p = new Pitch (i++,
+					new Double(note.substring(0, note.indexOf("|"))).doubleValue(),
+					note.substring(note.indexOf("|")+1));
 			
-			ms = querySequence.matchingSequence(corpus, p);
+			ms = distanceNeuma.matchingSequence(corpus, p);
 
 			if(ms != null) 
 				sequences.add(ms);
+			num = notes.indexOf("(", num+1);
 		}
-		ms = querySequence.endMatching();
+		ms = distanceNeuma.endMatching();
 		if(ms != null)
 			sequences.add(ms);
 	}

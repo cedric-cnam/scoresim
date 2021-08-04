@@ -2,8 +2,8 @@
 https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting-engine.html
 
 Config file "elasticsearch/plugin-descriptor.properties" must be set to the used elasticsearch version
-	currently 6.1.2
-Then, produce a new ZIP archive 'scoresim.zip' including the elasticsearch directory. 
+	currently 7.12.1
+Then, produce a new ZIP archive 'scoresim.zip' *without* including the elasticsearch directory. 
 
 #|____elasticsearch/
 #| |____   scoresim.jar <-- classes, resources, dependencies
@@ -20,24 +20,30 @@ POST /scorelib/_search
 {
 	"query": {
 	  "function_score": {
-	    "query": {"bool": {
-	    "must": [
-	      {"prefix": {"corpus_ref": "timbres"}},
-	      {"match_phrase": {"melody.value": "fmbb mbbc"}}
-	    ]
-	  }},
-	    "functions": [
-	      {"script_score": {"script": {
-			"lang": "ScoreSim",
-			"source": "scorelib",
-			"params": {
-				"query": "{\"items\": [{\"id\": \"\", \"tied\": false, \"octave\": 4, \"is_rest\": false, \"alteration\": 0, \"step\": \"G\", \"duration\": 1.0}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"C\", \"duration\": 0.5}, {\"id\": \"\", \"tied\": false, \"octave\": 4, \"is_rest\": false, \"alteration\": 0, \"step\": \"B\", \"duration\": 0.5}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"C\", \"duration\": 1.0}, {\"id\": \"\", \"tied\": false, \"octave\": 5, \"is_rest\": false, \"alteration\": 0, \"step\": \"D\", \"duration\": 0.5}]}",
-				"type": 1}
-			}}}
-	    ]
+	    "query": {
+	      "bool": {
+	        "must": [
+	          {"wildcard": {"opusref": "*palestrina*"}},
+	          {"match_phrase": {"diatonic": "5A;3D;2A;"}}
+	        ]
+	      }
+	    },
+	    "functions":
+	      [{"script_score": {"script": {"lang": "ScoreSim", "source": "ScoreSim",
+			    "params": {"query": "(0|1/2)(1|1)(2|1)", "type": 1}}}
+	      }]
 	  }
-	}
+	},
+	"highlight": {
+    "fields" : {
+      "diatonic" : {}, "summary": {}
+    }
+  },
+  "fields":[
+      "diatonic", "opusref", "summary"
+  ],"_source": false
 }
+
 
 #Mapping to aggregate strings like "melody.value"
 PUT /scorelib/opus_index/_mapping

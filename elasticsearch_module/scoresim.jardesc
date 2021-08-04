@@ -13,10 +13,11 @@
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
         <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance.block"/>
         <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance"/>
-        <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim"/>
         <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.music"/>
-        <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance.interval"/>
         <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance.melodic"/>
+        <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance.interval"/>
+        <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim{ScoreSimException.java"/>
+        <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim{ScoreSimScriptPlugin.java"/>
         <javaElement handleIdentifier="=ScoreSim/src&lt;fr.cnam.vertigo.scoresim.distance.blockInterval"/>
     </selectedElements>
 </jardesc>
