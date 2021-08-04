@@ -143,6 +143,7 @@ public class ScoreSimScriptPlugin extends Plugin implements ScriptPlugin {
 	
 					@Override
 					public double execute(ExplanationHolder explanation) {
+						//TODO: see ExplanationHolder for output query?
 						if(doc == null)
 							return DistanceNeuma.MIN_SCORE;
 						try {
