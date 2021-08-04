@@ -18,7 +18,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class ScoreSplit {
-	protected static final String config = "data/config.json";
+	protected static final String config = "data/config/config.json";
 	protected static String ES = "";
 	protected static int ES_port = 0;
 	protected static String ES_index = "";
@@ -142,7 +142,7 @@ public class ScoreSplit {
 			Request request = new Request("GET", "/"+ES_index);
 			Response response = client.performRequest(request);
 		} catch (Exception e) {
-			JSONObject mapping = readJSONFile("data/mapping.json");
+			JSONObject mapping = readJSONFile("data/config/mapping.json");
 			upload2Elastic(mapping, "mapping", false);
 		}
 	}
@@ -181,7 +181,7 @@ public class ScoreSplit {
 		boolean toES = true;
 		ScoreSplit ss = new ScoreSplit(toES);
 		try {
-			ss.importSplitJSON("data/composers-palestrina-agnus.json", toES);
+			ss.importSplitJSON("data/scores/composers-palestrina-agnus.json", toES);
 			ss.close();
 		} catch (Exception e) {
 			e.printStackTrace();
