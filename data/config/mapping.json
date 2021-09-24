@@ -1,0 +1,17 @@
+{
+	"settings": {
+		"number_of_shards": 1
+	},
+	"mappings": {
+		"properties": {
+			"id":{"type":"text"},
+			"voice": {"type": "integer"},
+			"opusref": {"type": "text","fields":{"keyword":{"type":"keyword"}}},
+			"opusurl": {"type": "text"},
+			"melodic": {"type": "text", "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"diatonic": {"type": "text", "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"rhythmic": {"type": "text", "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"notes": {"type": "text"}
+		}
+	}
+}

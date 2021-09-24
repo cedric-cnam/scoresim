@@ -1,0 +1,8 @@
+#!/bin/sh
+cd /home/elasticsearch/elasticsearch-7.12.1
+echo "\n---=== Remove old plugin ScoreSim from ES ===---" 
+bin/elasticsearch-plugin remove ScoreSim
+echo "\n---=== Add new plugin ScoreSim from ES ===---" 
+bin/elasticsearch-plugin install -v file:///scoresim.zip
+echo "\n---=== Restart Elasticsearch and test plugin ===---" 
+bin/elasticsearch

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "---=== Creating ScoreSim archive for Elasticsearch ===---"
+zip scoresim.zip \
+	plugin-descriptor.properties \
+	json-simple-1.1.jar \
+	scoresim.jar
+echo "---=== Transfering scoresim.zip to docker ===---"
+docker cp scoresim.zip scoresim2:/
+echo "---=== Launch import plugin ScoreSim into ES ===---" 
+docker exec -it scoresim2 "/home/elasticsearch/elasticsearch-7.12.1/installScoreSim_ES"

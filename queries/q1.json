@@ -1,0 +1,22 @@
+{
+	"_source": {"includes":["corpus_ref"]},
+	"query": {
+    "function_score": {
+      "query":{
+			"bool": {"must": [
+			    {"terms":{"corpus_ref":[]}},
+	    		{"match_phrase": {"melody.value": "demc"}}
+	    ]
+	  }},
+	    "functions": [
+	      {"script_score": {"script": {
+			"lang": "ScoreSim",
+			"source": "scorelib",
+			"params": {
+				"query": "{\"items\": [{\"alteration\": 0, \"duration\": 1.0, \"id\": \"\", \"is_rest\": false, \"octave\": 4, \"step\": \"A\", \"tied\": false}, {\"alteration\": 0, \"duration\": 1.0, \"id\": \"\", \"is_rest\": false, \"octave\": 5, \"step\": \"C\", \"tied\": false}, {\"alteration\": 0, \"duration\": 1.0, \"id\": \"\", \"is_rest\": false, \"octave\": 5, \"step\": \"E\", \"tied\": false}, {\"alteration\": 0, \"duration\": 0.5, \"id\": \"\", \"is_rest\": false, \"octave\": 5, \"step\": \"D\", \"tied\": false}]}",
+				"type": 1}
+			}}}
+	    ]
+	  }
+	},"size":10000
+}
