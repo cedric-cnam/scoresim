@@ -1,0 +1,16 @@
+{
+	"_source": {"includes":["corpus_ref"]},
+	"query": {
+    "function_score": {
+      "query":{
+			"bool": {"must": [
+			    {"terms":{"corpus_ref":[]}},
+				{"match_phrase": {"melody.value": "bmbb "}}
+			]}
+		},
+		"functions": [
+			{"script_score": {"script": {"source": "scorelib", "lang": "ScoreSim", "params": {"query": 
+			"{\"items\": [{\"alteration\": 0, \"duration\": 0.5, \"id\": \"\", \"is_rest\": false, \"octave\": 4, \"step\": \"B\", \"tied\": false}, {\"alteration\": 0, \"duration\": 0.5, \"id\": \"\", \"is_rest\": false, \"octave\": 5, \"step\": \"C\", \"tied\": false}, {\"alteration\": 0, \"duration\": 0.5, \"id\": \"\", \"is_rest\": false, \"octave\": 4, \"step\": \"B\", \"tied\": false}, {\"alteration\": 0, \"duration\": 0.5, \"id\": \"\", \"is_rest\": false, \"octave\": 5, \"step\": \"C\", \"tied\": false}]}"
+			,"type": 1}}}}]}
+	}
+}
