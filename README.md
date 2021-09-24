@@ -100,26 +100,3 @@ Several classes can be updated:
 		*** This function can be changed if the sequence of notes is modified 
 
 To test your query locally, you can use "ScoreSimTestDistance" class.
-
-### old features to update:
-
-#Mapping to aggregate strings like "melody.value"
-PUT /scorelib/opus_index/_mapping
-{
-  "properties": {
-    "melody.value": {
-      "type": "text",
-      "fielddata": true
-    }
-  }
-}
-
-#Amount of scores per corpus
-POST scorelib/_search
-{"aggs" : { "nb_par_corpus" : {
-"terms" : {"field" : "corpus_ref"} }}, "size":0}
-
-#Amount of occurrences of a given pattern
-POST scorelib/_search
-{"aggs" : { "nb_par_corpus" : {
-"terms" : {"field" : "melody.value"} }}, "size":0}
