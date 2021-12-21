@@ -1,0 +1,87 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ismir19-search.aux
+The style file: plain.bst
+I couldn't open database file ../biblio.bib
+---line 80 of file ismir19-search.aux
+ : \bibdata{../biblio
+ :                   }
+I'm skipping whatever remains of this command
+I found no database files---while reading file ismir19-search.aux
+Warning--I didn't find a database entry for "Good01"
+Warning--I didn't find a database entry for "Rolland02"
+Warning--I didn't find a database entry for "MEI_ws"
+Warning--I didn't find a database entry for "MNX_overview"
+Warning--I didn't find a database entry for "MRS08"
+Warning--I didn't find a database entry for "Prince14"
+Warning--I didn't find a database entry for "JDE07"
+Warning--I didn't find a database entry for "ERP17"
+Warning--I didn't find a database entry for "Maier:1978:CPS:322063.322075"
+Warning--I didn't find a database entry for "878178"
+Warning--I didn't find a database entry for "Lettl80"
+Warning--I didn't find a database entry for "Lucene08"
+Warning--I didn't find a database entry for "Tra12"
+Warning--I didn't find a database entry for "doc-dsl-ES"
+Warning--I didn't find a database entry for "Casey2008"
+Warning--I didn't find a database entry for "Velardo2016"
+Warning--I didn't find a database entry for "TGVWO03"
+Warning--I didn't find a database entry for "Samet2006"
+Warning--I didn't find a database entry for "Knopke08"
+Warning--I didn't find a database entry for "Kornstaedt98"
+Warning--I didn't find a database entry for "Stuart_search-effectivenessmeasures"
+Warning--I didn't find a database entry for "PLT01"
+Warning--I didn't find a database entry for "CCF04"
+Warning--I didn't find a database entry for "CCF05"
+Warning--I didn't find a database entry for "CI04"
+Warning--I didn't find a database entry for "CCIMS05"
+Warning--I didn't find a database entry for "Toussaint04"
+Warning--I didn't find a database entry for "Navarro00"
+Warning--I didn't find a database entry for "ConstantinMFR11"
+Warning--I didn't find a database entry for "KR05"
+Warning--I didn't find a database entry for "Klaus18"
+Warning--I didn't find a database entry for "Downie99"
+Warning--I didn't find a database entry for "NO04"
+Warning--I didn't find a database entry for "DR04"
+Warning--I didn't find a database entry for "CJ06"
+You've used 0 entries,
+            2118 wiz_defined-function locations,
+            566 strings with 4610 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There were 2 error messages)

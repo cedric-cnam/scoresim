@@ -1,0 +1,1378 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.10)  28 SEP 2021 09:03
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**ismir19-search.tex
+(./ismir19-search.tex
+LaTeX2e <2019-10-01>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+) (./ismir.sty)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2019/04/01 v2.17c AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2855.
+LaTeX Info: Redefining \] on input line 2856.
+) (./cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/07/20 v1.3b Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks22
+\verbatim@line=\toks23
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/moreverb/moreverb.sty
+Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
+\tab@position=\count100
+\tab@size=\count101
+\listing@line=\count102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip46
+\multirow@cntb=\count103
+\multirow@dima=\skip47
+\bigstrutjot=\dimen114
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count104
+\float@exts=\toks24
+\float@box=\box29
+\@float@everytoks=\toks25
+\@floatcapt=\box30
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks26
+\c@algorithm=\count105
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count106
+\c@ALG@rem=\count107
+\c@ALG@nested=\count108
+\ALG@tlm=\skip48
+\ALG@thistlm=\skip49
+\c@ALG@Lnr=\count109
+\c@ALG@blocknr=\count110
+\c@ALG@storecount=\count111
+\c@ALG@tmpcounter=\count112
+\ALG@tmplength=\skip50
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count113
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2019/01/15
+
+Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
+\FV@CodeLineNo=\count114
+\FV@InFile=\read2
+\FV@TabBox=\box31
+\c@FancyVerbLine=\count115
+\FV@StepNumber=\count116
+\FV@OutFile=\write4
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2019/07/11 v1.2j UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count117
+\output=\toks27
+\linenoprevgraf=\count118
+\linenumbersep=\dimen115
+\linenumberwidth=\dimen116
+\c@linenumber=\count119
+\c@pagewiselinenumber=\count120
+\c@LN@truepage=\count121
+\c@internallinenumber=\count122
+\c@internallinenumbers=\count123
+\quotelinenumbersep=\dimen117
+\bframerule=\dimen118
+\bframesep=\dimen119
+\bframebox=\box32
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count124
+\c@FV@TrueTabCounter=\count125
+\FV@TabBox@Group=\box33
+\FV@TmpLength=\skip51
+\c@FV@HighlightLinesStart=\count126
+\c@FV@HighlightLinesStop=\count127
+\FV@LoopCount=\count128
+\FV@NCharsBox=\box34
+\FV@BreakIndent=\dimen120
+\FV@BreakIndentNChars=\count129
+\FV@BreakSymbolSepLeft=\dimen121
+\FV@BreakSymbolSepLeftNChars=\count130
+\FV@BreakSymbolSepRight=\dimen122
+\FV@BreakSymbolSepRightNChars=\count131
+\FV@BreakSymbolIndentLeft=\dimen123
+\FV@BreakSymbolIndentLeftNChars=\count132
+\FV@BreakSymbolIndentRight=\dimen124
+\FV@BreakSymbolIndentRightNChars=\count133
+\c@FancyVerbLineBreakLast=\count134
+\FV@LineBox=\box35
+\FV@LineIndentBox=\box36
+\FV@LineWidth=\dimen125
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip52
+\calc@Bskip=\skip53
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count137
+\calc@Cskip=\skip54
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02b unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 70.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "ismir19-search.w18")...executed.
+
+
+(./ismir19-search.w18)
+runsystem(rm -- "ismir19-search.w18")...executed.
+
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count138
+\decimalpart=\count139
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip55
+\fb@frw=\dimen128
+\fb@frh=\dimen129
+\FrameRule=\dimen130
+\FrameSep=\dimen131
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box37
+\minted@code=\write5
+\c@minted@FancyVerbLineTemp=\count140
+\c@minted@pygmentizecounter=\count141
+\@float@every@listing=\toks28
+\c@listing=\count142
+)
+runsystem(mkdir -p _minted-ismir19-search)...executed.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen132
+\pgfutil@tempdimb=\dimen133
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box38
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
+))
+Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen134
+\pgf@y=\dimen135
+\pgf@xa=\dimen136
+\pgf@ya=\dimen137
+\pgf@xb=\dimen138
+\pgf@yb=\dimen139
+\pgf@xc=\dimen140
+\pgf@yc=\dimen141
+\pgf@xd=\dimen142
+\pgf@yd=\dimen143
+\w@pgf@writea=\write6
+\r@pgf@reada=\read4
+\c@pgf@counta=\count143
+\c@pgf@countb=\count144
+\c@pgf@countc=\count145
+\c@pgf@countd=\count146
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+\pgf@sys@id@count=\count147
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfsyssoftpath@smallbuffer@items=\count148
+\pgfsyssoftpath@bigbuffer@items=\count149
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen144
+\pgfmath@count=\count150
+\pgfmath@box=\box39
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count151
+)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@picminx=\dimen145
+\pgf@picmaxx=\dimen146
+\pgf@picminy=\dimen147
+\pgf@picmaxy=\dimen148
+\pgf@pathminx=\dimen149
+\pgf@pathmaxx=\dimen150
+\pgf@pathminy=\dimen151
+\pgf@pathmaxy=\dimen152
+\pgf@xx=\dimen153
+\pgf@xy=\dimen154
+\pgf@yx=\dimen155
+\pgf@yy=\dimen156
+\pgf@zx=\dimen157
+\pgf@zy=\dimen158
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@path@lastx=\dimen159
+\pgf@path@lasty=\dimen160
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@shorten@end@additional=\dimen161
+\pgf@shorten@start@additional=\dimen162
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfpic=\box40
+\pgf@hbox=\box41
+\pgf@layerbox@main=\box42
+\pgf@picture@serial@count=\count152
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgflinewidth=\dimen163
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@pt@x=\dimen164
+\pgf@pt@y=\dimen165
+\pgf@pt@temp=\dimen166
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfarrowsep=\dimen167
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@max=\dimen168
+\pgf@sys@shading@range@num=\count153
+\pgf@shadingcount=\count154
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfexternal@startupbox=\box43
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfnodeparttextbox=\box44
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@nodesepstart=\dimen169
+\pgf@nodesepend=\dimen170
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen171
+\pgffor@skip=\dimen172
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@plot@mark@count=\count155
+\pgfplotmarksize=\dimen173
+)
+\tikz@lastx=\dimen174
+\tikz@lasty=\dimen175
+\tikz@lastxsaved=\dimen176
+\tikz@lastysaved=\dimen177
+\tikz@lastmovetox=\dimen178
+\tikz@lastmovetoy=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
+\tikz@figbox=\box45
+\tikz@figbox@bg=\box46
+\tikz@tempbox=\box47
+\tikz@tempbox@bg=\box48
+\tikztreelevel=\count156
+\tikznumberofchildren=\count157
+\tikznumberofcurrentchild=\count158
+\tikz@fig@count=\count159
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfmatrixcurrentrow=\count160
+\pgfmatrixcurrentcolumn=\count161
+\pgf@matrix@numberofcolumns=\count162
+)
+\tikz@expandcount=\count163
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks41
+\t@pgfplots@tokb=\toks42
+\t@pgfplots@tokc=\toks43
+\pgfplots@tmpa=\dimen182
+\c@pgfplots@coordindex=\count164
+\c@pgfplots@scanlineindex=\count165
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
+.code.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
+ode.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_loader.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
+.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructure.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructureext.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+array.code.tex
+\c@pgfplotsarray@tmp=\count166
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+matrix.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
+shared.code.tex
+\c@pgfplotstable@counta=\count167
+\t@pgfplotstable@a=\toks44
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+deque.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
+de.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
+ta.code.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
+.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
+s.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count168
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
+.surfshading.pgfsys-pdftex.def)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
+code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
+e.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
+ode.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
+ode.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
+r.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
+code.tex)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
+tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
+g.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
+e.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
+tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
+x)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen183
+\pgfdecoratedremainingdistance=\dimen184
+\pgfdecoratedinputsegmentcompleteddistance=\dimen185
+\pgfdecoratedinputsegmentremainingdistance=\dimen186
+\pgf@decorate@distancetomove=\dimen187
+\pgf@decorate@repeatstate=\count169
+\pgfdecorationsegmentamplitude=\dimen188
+\pgfdecorationsegmentlength=\dimen189
+)
+\tikz@lib@dec@box=\box49
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count170
+\pgfplots@xmin@reg=\dimen190
+\pgfplots@xmax@reg=\dimen191
+\pgfplots@ymin@reg=\dimen192
+\pgfplots@ymax@reg=\dimen193
+\pgfplots@zmin@reg=\dimen194
+\pgfplots@zmax@reg=\dimen195
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex
+File: pgflibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.statistics.code.tex)
+\c@Definition=\count171
+\c@Example=\count172
+\c@Theorem=\count173
+\c@Remark=\count174
+runsystem(which pygmentize && touch ismir19-search.aex)...executed.
+
+runsystem(rm ismir19-search.aex)...executed.
+
+ (./ismir19-search.aux)
+\openout1 = `ismir19-search.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+32.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 13
+2.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count175
+\scratchdimen=\dimen196
+\scratchbox=\box50
+\nofMPsegments=\count176
+\nofMParguments=\count177
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count178
+\MPscratchDim=\dimen197
+\MPnumerator=\count179
+\makeMPintoPDFobject=\count180
+\everyMPtoPDFconversion=\toks46
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
+your preamble.
+ on input line 132.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 13
+5.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (12.00002pt too wide) in paragraph at lines 135--135
+ [][] 
+ []
+
+<figs/cc_by.pdf, id=4, 121.45375pt x 43.16125pt>
+File: figs/cc_by.pdf Graphic file (type pdf)
+<use figs/cc_by.pdf>
+Package pdftex.def Info: figs/cc_by.pdf  used on input line 135.
+(pdftex.def)             Requested size: 36.02869pt x 12.80365pt.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+35.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 138.
+
+
+LaTeX Warning: Citation `Good01' on page 1 undefined on input line 157.
+
+
+LaTeX Warning: Citation `Rolland02' on page 1 undefined on input line 157.
+
+
+LaTeX Warning: Citation `MEI_ws' on page 1 undefined on input line 157.
+
+
+LaTeX Warning: Citation `MNX_overview' on page 1 undefined on input line 158.
+
+<../figures/matching-steps2.pdf, id=5, 826.08624pt x 71.26625pt>
+File: ../figures/matching-steps2.pdf Graphic file (type pdf)
+<use ../figures/matching-steps2.pdf>
+Package pdftex.def Info: ../figures/matching-steps2.pdf  used on input line 184
+.
+(pdftex.def)             Requested size: 489.38739pt x 42.2196pt.
+
+LaTeX Warning: Citation `MRS08' on page 1 undefined on input line 192.
+
+
+LaTeX Warning: Citation `Prince14' on page 1 undefined on input line 243.
+
+[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+ <./figs/cc_by.pdf>]
+Overfull \hbox (1.14069pt too wide) detected at line 266
+\OML/cmm/m/it/8 V[] \OT1/cmr/m/n/8 =\OML/cmm/m/it/8 < \OT1/cmr/m/n/8 (34\OML/cm
+m/m/it/8 ; \OT1/cmr/m/n/8 8); (41\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 8); (41\OML/c
+mm/m/it/8 ; \OT1/cmr/m/n/8 3); (34\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 8); (42\OML/
+cmm/m/it/8 ; \OT1/cmr/m/n/8 8); (42\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 6); (39\OML
+/cmm/m/it/8 ; \OT1/cmr/m/n/8 8); [] \OML/cmm/m/it/8 >
+ []
+
+<../score-examples/voice.pdf, id=24, 352.31625pt x 48.18pt>
+File: ../score-examples/voice.pdf Graphic file (type pdf)
+<use ../score-examples/voice.pdf>
+Package pdftex.def Info: ../score-examples/voice.pdf  used on input line 273.
+(pdftex.def)             Requested size: 186.65077pt x 25.52496pt.
+<../score-examples/pexact.pdf, id=25, 222.8325pt x 39.14626pt>
+File: ../score-examples/pexact.pdf Graphic file (type pdf)
+<use ../score-examples/pexact.pdf>
+Package pdftex.def Info: ../score-examples/pexact.pdf  used on input line 337.
+(pdftex.def)             Requested size: 114.32445pt x 20.08377pt.
+<../score-examples/ptransposed.pdf, id=26, 217.81375pt x 38.1425pt>
+File: ../score-examples/ptransposed.pdf Graphic file (type pdf)
+<use ../score-examples/ptransposed.pdf>
+Package pdftex.def Info: ../score-examples/ptransposed.pdf  used on input line 
+342.
+(pdftex.def)             Requested size: 114.32445pt x 20.01987pt.
+<../score-examples//psmallrhythmvariant.pdf, id=27, 249.93375pt x 38.1425pt>
+File: ../score-examples//psmallrhythmvariant.pdf Graphic file (type pdf)
+<use ../score-examples//psmallrhythmvariant.pdf>
+Package pdftex.def Info: ../score-examples//psmallrhythmvariant.pdf  used on in
+put line 346.
+(pdftex.def)             Requested size: 114.32445pt x 17.44681pt.
+<../score-examples//pexact3.pdf, id=28, 240.9pt x 39.14626pt>
+File: ../score-examples//pexact3.pdf Graphic file (type pdf)
+<use ../score-examples//pexact3.pdf>
+Package pdftex.def Info: ../score-examples//pexact3.pdf  used on input line 350
+.
+(pdftex.def)             Requested size: 114.32445pt x 18.57733pt.
+<../score-examples/faraway.pdf, id=29, 273.02pt x 38.1425pt>
+File: ../score-examples/faraway.pdf Graphic file (type pdf)
+<use ../score-examples/faraway.pdf>
+Package pdftex.def Info: ../score-examples/faraway.pdf  used on input line 358.
+
+(pdftex.def)             Requested size: 122.151pt x 17.06502pt.
+<../score-examples/pmutated.pdf, id=30, 240.9pt x 38.1425pt>
+File: ../score-examples/pmutated.pdf Graphic file (type pdf)
+<use ../score-examples/pmutated.pdf>
+Package pdftex.def Info: ../score-examples/pmutated.pdf  used on input line 363
+.
+(pdftex.def)             Requested size: 105.70601pt x 16.73676pt.
+<../score-examples/pnorythmtrans.pdf, id=31, 160.6pt x 38.1425pt>
+File: ../score-examples/pnorythmtrans.pdf Graphic file (type pdf)
+<use ../score-examples/pnorythmtrans.pdf>
+Package pdftex.def Info: ../score-examples/pnorythmtrans.pdf  used on input lin
+e 371.
+(pdftex.def)             Requested size: 78.92664pt x 18.74527pt.
+<../score-examples/ptokenized.pdf, id=32, 180.675pt x 38.1425pt>
+File: ../score-examples/ptokenized.pdf Graphic file (type pdf)
+<use ../score-examples/ptokenized.pdf>
+Package pdftex.def Info: ../score-examples/ptokenized.pdf  used on input line 3
+76.
+(pdftex.def)             Requested size: 90.2026pt x 19.04268pt.
+
+LaTeX Warning: Citation `JDE07' on page 2 undefined on input line 425.
+
+
+LaTeX Warning: Citation `ERP17' on page 2 undefined on input line 425.
+
+[2 <../figures/matching-steps2.pdf> <../score-examples/voice.pdf> <../score-exa
+mples/pexact.pdf> <../score-examples/ptransposed.pdf> <../score-examples//psmal
+lrhythmvariant.pdf> <../score-examples//pexact3.pdf>]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 463.
+
+
+LaTeX Warning: Citation `Maier:1978:CPS:322063.322075' on page 3 undefined on i
+nput line 532.
+
+
+LaTeX Warning: Citation `878178' on page 3 undefined on input line 532.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--565
+[]\T1/ptm/m/it/10 Let $\OML/cmm/m/it/10 F$ \T1/ptm/m/it/10 be a frag-ment such 
+that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+[]$\OML/cmm/m/it/10 p[]$ \T1/ptm/m/it/10 and $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/i
+t/10 are two dis-tinct pitches, and
+ []
+
+<../figures/rhythm-blocks.pdf, id=104, 498.86375pt x 155.58125pt>
+File: ../figures/rhythm-blocks.pdf Graphic file (type pdf)
+<use ../figures/rhythm-blocks.pdf>
+Package pdftex.def Info: ../figures/rhythm-blocks.pdf  used on input line 580.
+(pdftex.def)             Requested size: 233.31259pt x 72.76234pt.
+[3 <../score-examples/faraway.pdf> <../score-examples/pmutated.pdf> <../score-e
+xamples/pnorythmtrans.pdf> <../score-examples/ptokenized.pdf>]
+
+LaTeX Warning: Citation `Lettl80' on page 4 undefined on input line 609.
+
+\openout4 = `ismir19-search.pyg'.
+
+(./_minted-ismir19-search/default-pyg-prefix.pygstyle)
+(./_minted-ismir19-search/default.pygstyle)
+(./_minted-ismir19-search/839648571D42AA74FFA4A444C4E9DAB6C4956964470E89D09F821
+2B04C9804E7.pygtex
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 2.
+)
+Underfull \hbox (badness 1127) in paragraph at lines 661--663
+\T1/ptm/m/n/10 We can then run key-word queries and, more im-por-
+ []
+
+<../figures/Elasticsearch-implem.pdf, id=134, 918.43124pt x 158.5925pt>
+File: ../figures/Elasticsearch-implem.pdf Graphic file (type pdf)
+<use ../figures/Elasticsearch-implem.pdf>
+Package pdftex.def Info: ../figures/Elasticsearch-implem.pdf  used on input lin
+e 668.
+(pdftex.def)             Requested size: 489.38739pt x 84.50613pt.
+
+LaTeX Warning: Citation `Lucene08' on page 4 undefined on input line 673.
+
+
+LaTeX Warning: Citation `Tra12' on page 4 undefined on input line 673.
+
+
+LaTeX Warning: Citation `doc-dsl-ES' on page 4 undefined on input line 676.
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 711--718
+[]\T1/ptm/m/n/10 We have in-te-grated the syn-onym query ex-pan-sion
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 711--718
+\T1/ptm/m/n/10 fea-ture of \T1/ptm/m/sc/10 Elas-tic-Search \T1/ptm/m/n/10 en-gi
+ne (e.g., the abil-ity
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 719--726
+\T1/ptm/m/sc/10 tic-Search\T1/ptm/m/n/10 , it is given to the in-dex as an an-a
+-lyzer
+ []
+
+[4 <../figures/rhythm-blocks.pdf>] (./figs/matchingRatio.tex
+(./figs/ratioMatching-plot1.tex) (./figs/ratioMatching-plot2.tex)
+(./figs/ratioMatching-plot3.tex) (./figs/ratioMatching-plot4.tex)
+Overfull \hbox (7.72722pt too wide) in paragraph at lines 28--30
+[][]
+ []
+
+) (./figs/executionTime.tex (./figs/executionTime-plot1.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+)
+(./figs/executionTime-plot2.tex) (./figs/executionTime-plot3.tex)
+(./figs/executionTime-plot4.tex)
+Overfull \hbox (7.72722pt too wide) in paragraph at lines 24--26
+[][]
+ []
+
+)
+Underfull \hbox (badness 1142) in paragraph at lines 739--740
+\T1/ptm/m/n/10 The in-te-gra-tion of our ap-proach in \T1/ptm/m/sc/10 Elas-tic-
+Search
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 755--764
+\T1/ptm/m/n/10 syn-onyms an-a-lyzer (\T1/ptm/m/it/10 melodic_transformation\T1/
+ptm/m/n/10 ), and the
+ []
+
+\openout4 = `ismir19-search.pyg'.
+
+
+(./_minted-ismir19-search/A4483014603335B4AEA5E0CDF25A3381C4956964470E89D09F821
+2B04C9804E7.pygtex
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <6> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 2.
+) [5 <../figures/Elasticsearch-implem.pdf>]
+
+LaTeX Warning: Citation `Casey2008' on page 6 undefined on input line 860.
+
+
+LaTeX Warning: Citation `JDE07' on page 6 undefined on input line 864.
+
+
+LaTeX Warning: Citation `ERP17' on page 6 undefined on input line 864.
+
+
+LaTeX Warning: Citation `Velardo2016' on page 6 undefined on input line 867.
+
+
+LaTeX Warning: Citation `TGVWO03' on page 6 undefined on input line 878.
+
+
+LaTeX Warning: Citation `Samet2006' on page 6 undefined on input line 881.
+
+
+LaTeX Warning: Citation `Knopke08' on page 6 undefined on input line 885.
+
+
+LaTeX Warning: Citation `Kornstaedt98' on page 6 undefined on input line 888.
+
+
+LaTeX Warning: Citation `Stuart_search-effectivenessmeasures' on page 6 undefin
+ed on input line 888.
+
+
+LaTeX Warning: Citation `PLT01' on page 6 undefined on input line 888.
+
+
+LaTeX Warning: Citation `CCF04' on page 6 undefined on input line 891.
+
+
+LaTeX Warning: Citation `CCF05' on page 6 undefined on input line 891.
+
+
+LaTeX Warning: Citation `CI04' on page 6 undefined on input line 891.
+
+
+LaTeX Warning: Citation `CCIMS05' on page 6 undefined on input line 891.
+
+
+LaTeX Warning: Citation `Toussaint04' on page 6 undefined on input line 892.
+
+
+LaTeX Warning: Citation `Navarro00' on page 6 undefined on input line 902.
+
+
+LaTeX Warning: Citation `ConstantinMFR11' on page 6 undefined on input line 902
+.
+
+
+LaTeX Warning: Citation `KR05' on page 6 undefined on input line 904.
+
+
+LaTeX Warning: Citation `Klaus18' on page 6 undefined on input line 904.
+
+
+LaTeX Warning: Citation `Downie99' on page 6 undefined on input line 908.
+
+
+LaTeX Warning: Citation `NO04' on page 6 undefined on input line 908.
+
+
+LaTeX Warning: Citation `DR04' on page 6 undefined on input line 908.
+
+
+LaTeX Warning: Citation `CJ06' on page 6 undefined on input line 908.
+
+(./ismir19-search.bbl [6]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \end{thebibliography}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) [7
+
+] (./ismir19-search.aux)
+
+LaTeX Warning: There were undefined references.
+
+runsystem(rm ismir19-search.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 28153 strings out of 492166
+ 697368 string characters out of 6125376
+ 950167 words of memory out of 5000000
+ 31938 multiletter control sequences out of 15000+600000
+ 85772 words of font info for 86 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,21n,98p,829b,2367s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+urw/courier/ucrb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/cour
+ier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ncntrsbk/unc
+r8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ismir19-search.pdf (7 pages, 514325 bytes).
+PDF statistics:
+ 356 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+
