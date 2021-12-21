@@ -1,5 +1,7 @@
 {
 	"ES":"localhost",
 	"ES_port":9200,
-	"ES_index":"scorelib"
+	"ES_index":"scorelib",
+	"REPO":"/Users/ntravers/LECNAM/par_CollabScore - data/exports/neuma/",
+	"QUERIES":"/Users/ntravers/scoresim/data/queries/"
 }

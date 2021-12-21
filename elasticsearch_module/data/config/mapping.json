@@ -5,12 +5,13 @@
 	"mappings": {
 		"properties": {
 			"id":{"type":"text"},
-			"voice": {"type": "integer"},
-			"opusref": {"type": "text"},
+			"voice": {"type": "text"},
+			"opusref": {"type": "text","fields":{"keyword":{"type":"keyword"}}},
 			"opusurl": {"type": "text"},
-			"melodic": {"type": "text"},
-			"diatonic": {"type": "text"},
-			"rhythmic": {"type": "text"},
+			"melody": {"type": "text", "fielddata": true, "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"diatonic": {"type": "text", "fielddata": true, "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"rhythm": {"type": "text", "fielddata": true, "analyzer":"whitespace", "fields":{"keyword":{"type":"keyword", "ignore_above":256}}},
+			"lyrics": {"type": "text"},
 			"notes": {"type": "text"}
 		}
 	}
